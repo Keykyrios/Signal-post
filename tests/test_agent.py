@@ -4,7 +4,7 @@ import os
 import tempfile
 import unittest
 
-from signalpost import agent, orgnr, runner, ui
+from signalpost import agent, orgnr, runner
 
 GOOD = "923609016"   # valid check digit
 OTHER = "984851006"  # valid check digit
@@ -151,10 +151,21 @@ class RunTests(unittest.TestCase):
             profiles, report = runner.run([GOOD, "923609017"], tmp, client=Fake(routes()), log=lambda *_: None)
             self.assertEqual(report["profiles_written"], 2)
             self.assertEqual(report["external_api_cost_usd"], 0.0)
-            page = ui.build(tmp)
-            html = open(page, encoding="utf-8").read()
-            self.assertIn("TESTSELSKAP AS", html)
-            self.assertNotIn("—", html)  # no em-dashes anywhere on the page
+
+    def test_depth_plan_fits_budget(self):
+        for n, budget in ((1000, 1800), (400, 1800), (100, 1800), (1000, 5000)):
+            plan = runner.plan_depths(n, budget)
+            self.assertEqual(len(plan), n)
+            self.assertLessEqual(sum(runner.COST[d] for d in plan), budget + 1)
+        self.assertEqual(min(runner.plan_depths(1000, 1800)), 1)
+        self.assertEqual(set(runner.plan_depths(100, 1800)), {3})
+
+    def test_shallow_run_keeps_deeper_facts(self):
+        full = agent.build_profile(Fake(routes()), GOOD)
+        self.assertIn("revenue", full["facts"])
+        shallow = agent.build_profile(Fake(routes()), GOOD, previous=full, depth=1)
+        self.assertEqual(shallow["facts"]["revenue"]["retrieved_at"], full["facts"]["revenue"]["retrieved_at"])
+        self.assertFalse([c for c in shallow["changes"] if c["new"] is None])
 
 
 if __name__ == "__main__":

@@ -290,7 +290,16 @@ def diff(previous, facts, now):
     return facts, changes
 
 
-def build_profile(client, raw, previous=None):
+ACCOUNT_KEYS = ("revenue", "operating_result", "net_result", "total_assets", "equity")
+ROLE_KEYS = ("ceo", "board_chair", "auditor", "accountant", "board_size", "sub_units")
+
+
+def build_profile(client, raw, previous=None, depth=3):
+    """depth 1: entity only. 2: plus annual accounts. 3: plus roles and sub-unit count.
+
+    Sources skipped by depth keep the previous values with their original retrieval date,
+    so a cheap run never deletes or re-dates facts it did not re-check.
+    """
     """Return a profile dict. Never raises for ordinary data problems."""
     now = now_iso()
     orgnr = orgnr_mod.normalize(raw)
@@ -326,7 +335,7 @@ def build_profile(client, raw, previous=None):
         roles_code = accounts_code = None
         subunits = None
         if not deleted:
-            if kind == "enhet":
+            if kind == "enhet" and depth >= 3:
                 roles_code, rdata = client.get_json(f"{BASE}/enheter/{orgnr}/roller")
                 if roles_code == 200:
                     roles = parse_roles(rdata)
@@ -334,11 +343,17 @@ def build_profile(client, raw, previous=None):
                                                 {"overordnetEnhet": orgnr, "size": 1})
                 if s_code == 200:
                     subunits = dig(sdata, "page", "totalElements")
-            accounts_code, adata = client.get_json(f"{ACCOUNTS}/{orgnr}")
-            if accounts_code == 200:
-                accounts = parse_accounts(adata, orgnr)
+            if depth >= 2:
+                accounts_code, adata = client.get_json(f"{ACCOUNTS}/{orgnr}")
+                if accounts_code == 200:
+                    accounts = parse_accounts(adata, orgnr)
 
         facts = build_facts(kind, entity, roles, accounts, subunits, orgnr, now)
+        skipped = (ACCOUNT_KEYS if depth < 2 else ()) + (ROLE_KEYS if depth < 3 else ())
+        for key in skipped:
+            old = ((previous or {}).get("facts") or {}).get(key)
+            if old and key not in facts:
+                facts[key] = dict(old)
         facts, changes = diff(previous, facts, now)
         prior_history = (previous or {}).get("history", [])
         history = (prior_history + changes)[-MAX_HISTORY:]
@@ -347,6 +362,13 @@ def build_profile(client, raw, previous=None):
                        match={"checksum_valid": True, "requested": orgnr, "returned": returned,
                               "matches_request": True, "registry": "underenheter" if kind == "underenhet" else "enheter"})
         profile["explanation"] = explain(profile, kind, accounts_code, roles_code, entity, facts)
+        if depth < 3 and not deleted:
+            part = "annual accounts, roles and sub-units" if depth < 2 else "roles and sub-units"
+            profile["explanation"].append(
+                "To stay inside the daily request limit this run checked the entity record only for %s. "
+                "Earlier values for them, if any, keep their original retrieval dates." % part)
+            if depth < 2 and "revenue" not in facts and "total_assets" not in facts:
+                profile["explanation"] = [n for n in profile["explanation"] if "Annual accounts exist" not in n]
         profile["first_checked_at"] = (previous or {}).get("first_checked_at", now)
         return profile
     except BudgetExceeded:

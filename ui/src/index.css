@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Design read: lookup tool for reviewers checking company records.
+   Trust-first and calm. Dials: variance 3, motion 2-3, density 4.
+   One accent, one radius, one theme that follows the system setting. */
+:root {
+  --bg: #f1f3f5;
+  --surface: #fafbfc;
+  --ink: #151a21;
+  --muted: #536070;
+  --line: #d5dbe2;
+  --accent: #1b4f8f;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12161b;
+    --surface: #181d23;
+    --ink: #e6eaef;
+    --muted: #9ba7b4;
+    --line: #2a323b;
+    --accent: #86b4ee;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --font-sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  --radius-ui: 6px;
+}
+
+@utility num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+html {
+  color-scheme: light dark;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.5 var(--font-sans);
+}
+a {
+  color: var(--accent);
+  text-underline-offset: 2px;
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-ui);
+}

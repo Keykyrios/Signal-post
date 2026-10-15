@@ -4,26 +4,31 @@ Give it Norwegian organisation numbers. It returns a profile per company: facts,
 
 ## Run it
 
-Python 3.9+, standard library only. No install step, no API key.
+Python 3.9+, standard library only. No install step, no API key. The viewer is prebuilt in `ui/dist`, so Node is not needed to run it.
+
+One command: find 1,000 companies, build the profiles, open the viewer at http://127.0.0.1:8000
 
 ```
-python -m signalpost run --input companies.txt --out out
+python -m signalpost all
 ```
 
-Then open `out/index.html`. Files written:
-
-- `out/profiles/<orgnr>.json` and `out/profiles.jsonl`: the profiles
-- `out/run_report.json`: companies, status counts, requests used, seconds, cost
-- `out/index.html`: browsable viewer (works offline, light and dark)
-
-To build a 1,000 company set first:
+Or step by step:
 
 ```
 python -m signalpost discover --n 1000 --out companies.txt
 python -m signalpost run --input companies.txt --out out
+python -m signalpost serve --out out
 ```
 
-Other commands: `python -m signalpost one 923609016` prints one profile; `python -m signalpost ui --out out` rebuilds the page. Tests: `python -m unittest discover -s tests`.
+Files written:
+
+- `out/profiles/<orgnr>.json` and `out/profiles.jsonl`: the profiles
+- `out/run_report.json`: companies, status counts, requests used, seconds, cost, depth used
+- Viewer: search, filters, per-fact source links, change history, "how this was matched", CSV and JSON export
+
+Other commands: `python -m signalpost one 923609016` prints one profile. Tests: `python -m unittest discover -s tests`. Viewer end-to-end test (needs Playwright): `python tests/ui_e2e.py http://127.0.0.1:8000/`.
+
+Rebuild the viewer after editing `ui/src`: `cd ui && npm install && npm run build`.
 
 ## Sources
 
@@ -46,12 +51,24 @@ All from the Brønnøysund Register Centre open APIs (NLOD 2.0 licence):
 
 ## Limits and cost
 
-Defaults stop at 1,800 requests and 40 minutes, under the daily 2,000 requests and 45 minutes. About 4 requests per company, so 100 companies use roughly 400.
+Defaults stop at 1,800 requests and 40 minutes, under the daily 2,000 requests and 45 minutes.
+
+A full profile costs about 4 requests (entity, roles, sub-unit count, accounts), so 1,000 full profiles would break the daily cap. The run therefore plans depth up front so the whole list fits the budget:
+
+- depth 3: entity, roles, sub-units, accounts (about 4 requests each)
+- depth 2: entity and accounts (about 2)
+- depth 1: entity record only (about 1)
+
+For 1,000 companies at 1,800 requests, every company gets the entity record and about 700 also get annual accounts. A shallower run never deletes or re-dates facts it did not re-check: earlier values keep their original retrieval date and the profile says so. Run again the next day to deepen more profiles. Force a depth with `--depth N`.
 
 - Model/API: no LLM and no paid API. Registers only.
 - Expected run cost: $0.00 declared external API cost.
-- Use `--skip-fresh-hours N` to reuse profiles checked recently and save requests.
+- `--skip-fresh-hours N` reuses profiles checked recently and saves requests.
 
 ## Not covered
 
 The registers do not publish ownership, shareholders, or history before the latest filed accounts. The agent does not scrape company websites, because matching a web page to the right company is the main source of wrong-company errors.
+
+## Viewer credits
+
+React 19, Vite, Tailwind, Motion, Hugeicons. Interface components are vendored from React Bits (MIT with Commons Clause) and Componentry (MIT): click-spark, shredder, bell-toggle, code-slots, branched-menu, folder-float, glide-select, fuse-button, jelly-radio, rubber-segment, swipe-row, squish-switch, pixel-swap, line-sidebar, prompt-bar, webgl-liquid. Several were edited for theme colours, accessibility labels and sizing.

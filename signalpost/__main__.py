@@ -2,9 +2,10 @@
 
 import argparse
 import json
+import os
 import sys
 
-from . import agent, discover as discover_mod, runner, ui
+from . import agent, discover as discover_mod, runner
 from .http import Client
 
 
@@ -18,6 +19,8 @@ def main(argv=None):
     run.add_argument("--workers", type=int, default=6)
     run.add_argument("--max-requests", type=int, default=1800)
     run.add_argument("--max-minutes", type=float, default=40)
+    run.add_argument("--depth", type=int, choices=(1, 2, 3), default=None,
+                     help="1 entity only, 2 plus accounts, 3 plus roles and sub-units (default: fit the request budget)")
     run.add_argument("--skip-fresh-hours", type=float, default=0,
                      help="reuse profiles checked within this many hours (default 0: always refresh)")
 
@@ -26,8 +29,15 @@ def main(argv=None):
     disc.add_argument("--out", default="companies.txt")
     disc.add_argument("--seed", type=int, default=2026)
 
-    page = sub.add_parser("ui", help="rebuild out/index.html from existing profiles")
-    page.add_argument("--out", default="out")
+    every = sub.add_parser("all", help="discover companies, build profiles, then open the viewer")
+    every.add_argument("--n", type=int, default=1000)
+    every.add_argument("--out", default="out")
+    every.add_argument("--port", type=int, default=8000)
+    every.add_argument("--no-serve", action="store_true")
+
+    srv = sub.add_parser("serve", help="open the React viewer on a local port")
+    srv.add_argument("--out", default="out")
+    srv.add_argument("--port", type=int, default=8000)
 
     one = sub.add_parser("one", help="print one profile as JSON")
     one.add_argument("orgnr")
@@ -50,14 +60,27 @@ def main(argv=None):
         _, report = runner.run(numbers, args.out, workers=args.workers,
                                max_requests=args.max_requests,
                                max_seconds=int(args.max_minutes * 60),
-                               skip_fresh_hours=args.skip_fresh_hours)
-        page_path = ui.build(args.out)
+                               skip_fresh_hours=args.skip_fresh_hours, depth=args.depth)
         print(json.dumps(report, indent=2))
-        print(f"Open {page_path} to browse the profiles.")
+        print(f"Run: python -m signalpost serve --out {args.out}")
         return 0
 
-    if args.cmd == "ui":
-        print(ui.build(args.out))
+    if args.cmd == "all":
+        numbers = discover_mod.discover(args.n, seed=2026)
+        os.makedirs(args.out, exist_ok=True)
+        listing = os.path.join(args.out, "companies.txt")
+        with open(listing, "w", encoding="utf-8") as handle:
+            handle.write("\n".join(numbers) + "\n")
+        _, report = runner.run(numbers, args.out)
+        print(json.dumps(report, indent=2))
+        if not args.no_serve:
+            from . import serve as serve_mod
+            serve_mod.serve(args.out, args.port)
+        return 0
+
+    if args.cmd == "serve":
+        from . import serve as serve_mod
+        serve_mod.serve(args.out, args.port)
         return 0
 
     if args.cmd == "one":

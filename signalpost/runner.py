@@ -38,14 +38,40 @@ def _save(path, data):
     os.replace(tmp, path)
 
 
+COST = {1: 1.1, 2: 2.1, 3: 4.1}  # requests per company, with a little room for the sub-unit fallback
+
+
+def plan_depths(n, budget, force=None):
+    """Pick how deep to look per company so the whole list fits the request budget.
+
+    Every company gets at least the entity record. Spare budget upgrades companies in list order.
+    """
+    if n == 0:
+        return []
+    if force:
+        return [force] * n
+    base = 1
+    for d in (3, 2):
+        if n * COST[d] <= budget:
+            base = d
+            break
+    if base == 3:
+        return [3] * n
+    extra = budget - n * COST[base]
+    k = max(0, min(n, int(extra // (COST[base + 1] - COST[base]))))
+    return [base + 1] * k + [base] * (n - k)
+
+
 def run(numbers, out_dir, workers=6, max_requests=1800, max_seconds=40 * 60,
-        skip_fresh_hours=0, client=None, log=print):
+        skip_fresh_hours=0, client=None, log=print, depth=None):
     started = time.monotonic()
     profile_dir = os.path.join(out_dir, "profiles")
     os.makedirs(profile_dir, exist_ok=True)
     client = client or Client(max_requests=max_requests, max_seconds=max_seconds)
     counts = {}
     skipped_budget = []
+
+    depths = dict(zip(numbers, plan_depths(len(numbers), max_requests, depth)))
 
     def work(number):
         path = os.path.join(profile_dir, f"{number}.json")
@@ -58,7 +84,7 @@ def run(numbers, out_dir, workers=6, max_requests=1800, max_seconds=40 * 60,
                     return number, previous, "fresh"
             except (KeyError, ValueError):
                 pass
-        profile = agent.build_profile(client, number, previous)
+        profile = agent.build_profile(client, number, previous, depth=depths[number])
         _save(path, profile)
         return number, profile, "fetched"
 
@@ -91,6 +117,7 @@ def run(numbers, out_dir, workers=6, max_requests=1800, max_seconds=40 * 60,
         "not_processed_budget": len(skipped_budget),
         "status_counts": counts,
         "requests_made": client.requests_made,
+        "depth_counts": {str(d): list(depths.values()).count(d) for d in (1, 2, 3)},
         "seconds": round(time.monotonic() - started, 1),
         "external_api_cost_usd": 0.0,
         "model_calls": 0,
