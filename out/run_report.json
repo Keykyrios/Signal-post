@@ -1,0 +1,19 @@
+{
+ "finished_at": "2026-10-17T18:12:30+00:00",
+ "companies_requested": 1100,
+ "profiles_written": 1100,
+ "not_processed_budget": 0,
+ "status_counts": {
+  "active": 1052,
+  "under_liquidation": 48
+ },
+ "requests_made": 1694,
+ "depth_counts": {
+  "1": 510,
+  "2": 590,
+  "3": 0
+ },
+ "seconds": 386.4,
+ "external_api_cost_usd": 0.0,
+ "model_calls": 0
+}
