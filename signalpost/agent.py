@@ -19,8 +19,6 @@ ACCOUNTS = "https://data.brreg.no/regnskapsregisteret/regnskap"
 SRC_ENHET = "Enhetsregisteret (Bronnoysund Register Centre)"
 SRC_ROLLER = "Enhetsregisteret roles"
 SRC_ACCOUNTS = "Regnskapsregisteret (annual accounts)"
-SRC_WEBSITE = "Company website"
-SRC_SEARCH = "Web search discovery"
 
 MAX_HISTORY = 50
 
@@ -92,8 +90,30 @@ def status_from(entity, deleted):
     return "active"
 
 
-def fetch_entity(client, orgnr):
+def prefetch(client, numbers, chunk=100):
+    """Look up many legal entities in a few requests. Returns {orgnr: body}.
+
+    Only entries whose returned number is one we asked for are kept. Anything missing or odd
+    is simply absent, and the per-company lookup (with all its checks) handles it.
+    """
+    cache = {}
+    valid = [n for n in numbers if orgnr_mod.is_valid(n)]
+    for i in range(0, len(valid), chunk):
+        part = valid[i:i + chunk]
+        code, body = client.get_json(f"{BASE}/enheter", {"organisasjonsnummer": ",".join(part), "size": chunk})
+        if code != 200 or not isinstance(body, dict):
+            continue
+        for row in (body.get("_embedded") or {}).get("enheter") or []:
+            number = orgnr_mod.normalize(row.get("organisasjonsnummer", "")) if isinstance(row, dict) else ""
+            if number in part:
+                cache[number] = row
+    return cache
+
+
+def fetch_entity(client, orgnr, cache=None):
     """Return (kind, status_code, body). kind is 'enhet', 'underenhet' or None."""
+    if cache and orgnr in cache:
+        return "enhet", 200, cache[orgnr]
     code, body = client.get_json(f"{BASE}/enheter/{orgnr}")
     if code == 200 and isinstance(body, dict):
         return "enhet", code, body
@@ -196,7 +216,6 @@ def build_facts(kind, entity, roles, accounts, subunit_total, orgnr, retrieved_a
         add("vat_registered", bool(entity["registrertIMvaregisteret"]))
     if entity.get("registrertIForetaksregisteret") is not None:
         add("in_business_register", bool(entity["registrertIForetaksregisteret"]))
-    add("website", entity.get("hjemmeside"))
     add("email", entity.get("epostadresse"))
     add("phone", entity.get("telefon") or entity.get("mobil"))
     purpose = entity.get("vedtektsfestetFormaal")
@@ -246,284 +265,6 @@ def build_facts(kind, entity, roles, accounts, subunit_total, orgnr, retrieved_a
     return fs.facts
 
 
-def add_web_facts(facts, web_data, orgnr, retrieved_at):
-    """Add web-discovered facts to the fact set."""
-    if not web_data:
-        return facts
-    
-    fs = FactSet(retrieved_at)
-    fs.facts = dict(facts)  # Start with existing facts
-    
-    # Verified website
-    if web_data.get("verified_website"):
-        site_url = web_data["verified_website"]
-        fs.add("verified_website", site_url, site_url, SRC_WEBSITE,
-               extra={"verification_method": web_data.get("website_verification", "unknown")})
-    
-    # Social profiles
-    for platform, url in web_data.get("social_profiles", {}).items():
-        source_url = web_data.get("verified_website") or url
-        fs.add(f"social_{platform}", url, source_url, SRC_WEBSITE,
-               extra={"platform": platform})
-    
-    # News items
-    news = web_data.get("news_items", [])
-    if news:
-        news_values = []
-        for item in news[:5]:  # Max 5 news items
-            entry = {"title": item["title"], "source_url": item.get("source_url", "")}
-            if item.get("date"):
-                entry["date"] = item["date"]
-            news_values.append(entry)
-        
-        source_url = web_data.get("page_links", {}).get("news") or web_data.get("verified_website", "")
-        fs.add("recent_news", news_values, source_url, SRC_WEBSITE,
-               extra={"item_count": len(news_values)})
-    
-    # Job postings
-    jobs = web_data.get("job_postings", [])
-    if jobs:
-        job_values = []
-        for item in jobs[:5]:  # Max 5 job postings
-            entry = {"title": item["title"], "source_url": item.get("source_url", "")}
-            if item.get("date"):
-                entry["date"] = item["date"]
-            job_values.append(entry)
-        
-        source_url = web_data.get("page_links", {}).get("careers") or web_data.get("verified_website", "")
-        fs.add("job_postings", job_values, source_url, SRC_WEBSITE,
-               extra={"item_count": len(job_values)})
-    
-    # About text / company description from website
-    if web_data.get("about_text"):
-        source_url = web_data.get("page_links", {}).get("about") or web_data.get("verified_website", "")
-        fs.add("website_description", web_data["about_text"], source_url, SRC_WEBSITE)
-    
-    return fs.facts
-
-
-def generate_summary(profile, facts, entity):
-    """Generate a human-readable company summary based on available facts."""
-    parts = []
-    name = facts.get("name", {}).get("value", "This company")
-    legal_form = facts.get("legal_form", {}).get("value", "")
-    industry = facts.get("industry_1", {}).get("value", "")
-    activity = facts.get("stated_activity", {}).get("value", "")
-    purpose = facts.get("stated_purpose", {}).get("value", "")
-    municipality = facts.get("municipality", {}).get("value", "")
-    employees = facts.get("employees", {}).get("value")
-    status = profile.get("status", "active")
-    web_desc = facts.get("website_description", {}).get("value", "")
-    
-    # Opening line
-    if legal_form:
-        parts.append(f"{name} is a {legal_form.lower()} registered in Norway")
-    else:
-        parts.append(f"{name} is registered in Norway")
-    
-    if municipality:
-        parts[-1] += f", based in {municipality}"
-    parts[-1] += "."
-    
-    # What they do
-    if web_desc and len(web_desc) > 30:
-        parts.append(f"According to their website: {web_desc}")
-    elif activity:
-        parts.append(f"Registered activity: {activity}")
-    elif purpose:
-        parts.append(f"Stated purpose: {purpose}")
-    elif industry:
-        parts.append(f"The company operates in: {industry}.")
-    
-    # Size / employees
-    if employees is not None and employees > 0:
-        parts.append(f"The company has {employees} registered employee(s).")
-    
-    # Financial snapshot
-    revenue = facts.get("revenue", {})
-    net_result = facts.get("net_result", {})
-    if revenue.get("value") is not None:
-        rev_val = revenue["value"]
-        currency = revenue.get("currency", "NOK")
-        period = revenue.get("as_of", "")
-        parts.append(f"Latest filed revenue: {rev_val:,.0f} {currency} (period ending {period}).")
-    if net_result.get("value") is not None:
-        nr_val = net_result["value"]
-        currency = net_result.get("currency", "NOK")
-        if nr_val >= 0:
-            parts.append(f"Net result: {nr_val:,.0f} {currency} (positive).")
-        else:
-            parts.append(f"Net result: {nr_val:,.0f} {currency} (negative).")
-    
-    # Leadership
-    ceo = facts.get("ceo", {}).get("value", "")
-    chair = facts.get("board_chair", {}).get("value", "")
-    if ceo:
-        parts.append(f"CEO/daglig leder: {ceo}.")
-    if chair:
-        parts.append(f"Board chair: {chair}.")
-    
-    # Website
-    website = facts.get("verified_website", {}).get("value") or facts.get("website", {}).get("value")
-    if website:
-        parts.append(f"Website: {website}.")
-    
-    # Hiring
-    jobs = facts.get("job_postings", {})
-    if jobs.get("value"):
-        count = len(jobs["value"]) if isinstance(jobs["value"], list) else 0
-        if count > 0:
-            parts.append(f"The company appears to be hiring, with {count} open position(s) listed on their website.")
-    
-    # News
-    news = facts.get("recent_news", {})
-    if news.get("value"):
-        count = len(news["value"]) if isinstance(news["value"], list) else 0
-        if count > 0:
-            parts.append(f"The company has {count} recent news item(s) on their website.")
-    
-    # Status
-    if status == "under_liquidation":
-        parts.append("Note: The company is currently under liquidation.")
-    elif status == "bankrupt":
-        parts.append("Note: The company is registered as bankrupt.")
-    elif status == "closed":
-        parts.append("Note: The company is registered as closed.")
-    
-    # What we couldn't find
-    missing = []
-    if "verified_website" not in facts and "website" not in facts:
-        missing.append("official website")
-    if "revenue" not in facts and "total_assets" not in facts:
-        missing.append("financial data")
-    if "ceo" not in facts:
-        missing.append("CEO/daglig leder")
-    if "job_postings" not in facts:
-        missing.append("job postings")
-    if "recent_news" not in facts:
-        missing.append("recent news")
-    
-    if missing:
-        parts.append(f"Not found: {', '.join(missing)}.")
-    
-    return " ".join(parts)
-
-
-def build_envelope(profile, facts):
-    """Build the required terminal envelope with all 7 sections."""
-    orgnr = profile["orgnr"]
-    status = profile.get("status", "unknown")
-    
-    def _avail(key):
-        """Return availability state for a fact."""
-        if key in facts:
-            return "available"
-        return "not_available"
-    
-    envelope = {
-        # Section 1: Legal identity and public brand
-        "legal_identity": {
-            "organisation_number": orgnr,
-            "name": facts.get("name", {}).get("value"),
-            "legal_form": facts.get("legal_form", {}).get("value"),
-            "legal_form_code": facts.get("legal_form", {}).get("code"),
-            "business_address": facts.get("business_address", {}).get("value"),
-            "municipality": facts.get("municipality", {}).get("value"),
-            "postal_address": facts.get("postal_address", {}).get("value"),
-            "founded": facts.get("founded", {}).get("value"),
-            "industry": facts.get("industry_1", {}).get("value"),
-            "industry_code": facts.get("industry_1", {}).get("code"),
-            "employees": facts.get("employees", {}).get("value"),
-            "status": status,
-        },
-        
-        # Section 2: Latest annual accounts
-        "annual_accounts": {
-            "state": _avail("revenue"),
-            "revenue": facts.get("revenue", {}).get("value"),
-            "operating_result": facts.get("operating_result", {}).get("value"),
-            "net_result": facts.get("net_result", {}).get("value"),
-            "total_assets": facts.get("total_assets", {}).get("value"),
-            "equity": facts.get("equity", {}).get("value"),
-            "currency": facts.get("revenue", {}).get("currency") or facts.get("total_assets", {}).get("currency"),
-            "period_end": facts.get("revenue", {}).get("as_of") or facts.get("total_assets", {}).get("as_of"),
-            "period_start": facts.get("revenue", {}).get("period_start") or facts.get("total_assets", {}).get("period_start"),
-        },
-        
-        # Section 3: Leadership and registered workplaces
-        "leadership": {
-            "ceo": {"state": _avail("ceo"), "value": facts.get("ceo", {}).get("value")},
-            "board_chair": {"state": _avail("board_chair"), "value": facts.get("board_chair", {}).get("value")},
-            "board_size": {"state": _avail("board_size"), "value": facts.get("board_size", {}).get("value"),
-                          "members": facts.get("board_size", {}).get("members")},
-            "auditor": {"state": _avail("auditor"), "value": facts.get("auditor", {}).get("value")},
-            "accountant": {"state": _avail("accountant"), "value": facts.get("accountant", {}).get("value")},
-            "sub_units": {"state": _avail("sub_units"), "value": facts.get("sub_units", {}).get("value")},
-        },
-        
-        # Section 4: Verified official website and company-owned profiles
-        "web_presence": {
-            "verified_website": {
-                "state": _avail("verified_website"),
-                "value": facts.get("verified_website", {}).get("value"),
-                "verification_method": facts.get("verified_website", {}).get("verification_method"),
-            },
-            "registry_website": {
-                "state": _avail("website"),
-                "value": facts.get("website", {}).get("value"),
-            },
-            "social_profiles": {},
-        },
-        
-        # Section 5: Hiring and dated public activity
-        "activity": {
-            "job_postings": {
-                "state": _avail("job_postings"),
-                "items": facts.get("job_postings", {}).get("value", []),
-            },
-            "recent_news": {
-                "state": _avail("recent_news"),
-                "items": facts.get("recent_news", {}).get("value", []),
-            },
-        },
-        
-        # Section 6: Claim-level evidence
-        "evidence": {},
-        
-        # Section 7: Refresh metadata
-        "refresh": {
-            "checked_at": profile.get("checked_at"),
-            "first_checked_at": profile.get("first_checked_at"),
-            "changes_detected": len(profile.get("changes", [])),
-        },
-    }
-    
-    # Populate social profiles
-    for key, fact in facts.items():
-        if key.startswith("social_"):
-            platform = key[7:]  # Remove "social_" prefix
-            envelope["web_presence"]["social_profiles"][platform] = {
-                "state": "available",
-                "value": fact.get("value"),
-                "source_url": fact.get("source_url"),
-            }
-    
-    if not envelope["web_presence"]["social_profiles"]:
-        envelope["web_presence"]["social_profiles"] = {"state": "not_available"}
-    
-    # Build evidence section
-    for key, fact in facts.items():
-        if isinstance(fact, dict) and "source_url" in fact:
-            envelope["evidence"][key] = {
-                "source": fact.get("source"),
-                "source_url": fact.get("source_url"),
-                "retrieved_at": fact.get("retrieved_at"),
-                "as_of": fact.get("as_of"),
-            }
-    
-    return envelope
-
-
 def explain(profile, kind, accounts_code, roles_code, entity, facts):
     notes = []
     notes.append(
@@ -571,11 +312,12 @@ def diff(previous, facts, now):
 
 
 ACCOUNT_KEYS = ("revenue", "operating_result", "net_result", "total_assets", "equity")
+WEB_KEYS = ("own_website", "news_latest", "open_positions", "careers_page", "social_linkedin",
+            "social_facebook", "social_instagram", "social_x", "social_youtube", "summary")
 ROLE_KEYS = ("ceo", "board_chair", "auditor", "accountant", "board_size", "sub_units")
-WEB_KEYS = ("verified_website", "website_description", "recent_news", "job_postings")
 
 
-def build_profile(client, raw, previous=None, depth=3, web_discovery=True):
+def build_profile(client, raw, previous=None, depth=3, cache=None):
     """depth 1: entity only. 2: plus annual accounts. 3: plus roles and sub-unit count.
 
     Sources skipped by depth keep the previous values with their original retrieval date,
@@ -584,18 +326,16 @@ def build_profile(client, raw, previous=None, depth=3, web_discovery=True):
     """Return a profile dict. Never raises for ordinary data problems."""
     now = now_iso()
     orgnr = orgnr_mod.normalize(raw)
-    profile = {"orgnr": orgnr, "checked_at": now, "schema": 2}
+    profile = {"orgnr": orgnr, "checked_at": now, "schema": 1}
 
     if not orgnr_mod.is_valid(orgnr):
         profile.update(status="rejected", facts={}, changes=[],
                        explanation=["The input is not a valid Norwegian organisation number (9 digits, modulus-11 check)."],
-                       match={"checksum_valid": False},
-                       envelope={"state": "failed", "reason": "invalid_org_number"},
-                       summary="Invalid organisation number.")
+                       match={"checksum_valid": False})
         return profile
 
     try:
-        kind, code, entity = fetch_entity(client, orgnr)
+        kind, code, entity = fetch_entity(client, orgnr, cache)
         if kind is None:
             if code == 404:
                 note = "No entity or sub-unit with this number exists in the register."
@@ -610,9 +350,7 @@ def build_profile(client, raw, previous=None, depth=3, web_discovery=True):
             profile.update(status="rejected", facts={}, changes=[],
                            match={"checksum_valid": True, "requested": orgnr, "returned": returned,
                                   "matches_request": False},
-                           explanation=["The register returned number '%s' for request '%s'. Nothing was published." % (returned, orgnr)],
-                           envelope={"state": "failed", "reason": "org_number_mismatch"},
-                           summary="Organisation number mismatch — no data published.")
+                           explanation=["The register returned number '%s' for request '%s'. Nothing was published." % (returned, orgnr)])
             return profile
 
         deleted = code == 410
@@ -634,30 +372,7 @@ def build_profile(client, raw, previous=None, depth=3, web_discovery=True):
                     accounts = parse_accounts(adata, orgnr)
 
         facts = build_facts(kind, entity, roles, accounts, subunits, orgnr, now)
-        
-        # Web discovery (new in v2)
-        web_data = None
-        if web_discovery and not deleted and kind == "enhet":
-            try:
-                from .web_discovery import discover_web_presence
-                company_name = entity.get("navn", "")
-                municipality = (dig(entity, "forretningsadresse", "kommune") or 
-                              dig(entity, "beliggenhetsadresse", "kommune") or "")
-                registry_website = entity.get("hjemmeside")
-                
-                web_data = discover_web_presence(
-                    company_name, municipality, orgnr,
-                    registry_website=registry_website, client=client
-                )
-                facts = add_web_facts(facts, web_data, orgnr, now)
-            except BudgetExceeded:
-                raise
-            except Exception:
-                pass  # Web discovery failure is not fatal
-        
-        skipped = (ACCOUNT_KEYS if depth < 2 else ()) + (ROLE_KEYS if depth < 3 else ())
-        if not web_discovery:
-            skipped = skipped + WEB_KEYS
+        skipped = (ACCOUNT_KEYS if depth < 2 else ()) + (ROLE_KEYS if depth < 3 else ()) + WEB_KEYS
         for key in skipped:
             old = ((previous or {}).get("facts") or {}).get(key)
             if old and key not in facts:
@@ -670,25 +385,6 @@ def build_profile(client, raw, previous=None, depth=3, web_discovery=True):
                        match={"checksum_valid": True, "requested": orgnr, "returned": returned,
                               "matches_request": True, "registry": "underenheter" if kind == "underenhet" else "enheter"})
         profile["explanation"] = explain(profile, kind, accounts_code, roles_code, entity, facts)
-        
-        # Add web discovery notes to explanation
-        if web_data:
-            if web_data.get("verified_website"):
-                method = web_data.get("website_verification", "verified")
-                profile["explanation"].append(
-                    f"Website {web_data['verified_website']} verified by {method}.")
-                if web_data.get("social_profiles"):
-                    platforms = ", ".join(web_data["social_profiles"].keys())
-                    profile["explanation"].append(f"Social profiles found: {platforms}.")
-                if web_data.get("news_items"):
-                    profile["explanation"].append(
-                        f"Found {len(web_data['news_items'])} news item(s) on the company website.")
-                if web_data.get("job_postings"):
-                    profile["explanation"].append(
-                        f"Found {len(web_data['job_postings'])} job posting(s) on the company website.")
-            else:
-                profile["explanation"].append("No verified website could be found for this company.")
-        
         if depth < 3 and not deleted:
             part = "annual accounts, roles and sub-units" if depth < 2 else "roles and sub-units"
             profile["explanation"].append(
@@ -696,14 +392,13 @@ def build_profile(client, raw, previous=None, depth=3, web_discovery=True):
                 "Earlier values for them, if any, keep their original retrieval dates." % part)
             if depth < 2 and "revenue" not in facts and "total_assets" not in facts:
                 profile["explanation"] = [n for n in profile["explanation"] if "Annual accounts exist" not in n]
-        
-        # Generate summary (new in v2)
-        profile["summary"] = generate_summary(profile, facts, entity)
-        
-        # Build the terminal envelope (new in v2)
-        profile["envelope"] = build_envelope(profile, facts)
-        
         profile["first_checked_at"] = (previous or {}).get("first_checked_at", now)
+        # The register's own "homepage" entry is only a lead to check, never published as a fact.
+        profile["register_site"] = entity.get("hjemmeside") or None
+        for key in ("web", "not_found"):
+            if (previous or {}).get(key) is not None:
+                profile[key] = previous[key]
+        profile["explanation"] += ["Web: " + n for n in dig(previous or {}, "web", "notes") or []]
         return profile
     except BudgetExceeded:
         raise
@@ -717,7 +412,5 @@ def _keep_previous(profile, previous, status, note):
         kept["explanation"] = list(previous.get("explanation", [])) + [note]
         return kept
     profile.update(status=status, facts={}, changes=[], explanation=[note],
-                   match={"checksum_valid": True},
-                   envelope={"state": status, "reason": note},
-                   summary=note)
+                   match={"checksum_valid": True})
     return profile

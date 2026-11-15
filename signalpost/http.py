@@ -11,7 +11,8 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-USER_AGENT = "signalpost/2.0 (open-data profile agent; Brreg NLOD 2.0 data)"
+USER_AGENT = "signalpost/1.0 (open-data profile agent; Brreg NLOD 2.0 data)"
+WEB_USER_AGENT = "Mozilla/5.0 (compatible; signalpost/1.0; company profile check)"
 
 
 class BudgetExceeded(Exception):
@@ -35,7 +36,29 @@ class Client:
                 raise BudgetExceeded("time budget used up")
             self.requests_made += 1
 
-    def get_json(self, url, params=None):
+    def get_text(self, url, max_bytes=1_500_000):
+        """Fetch a web page once (no retries, to save budget). Returns (status, text, final_url)."""
+        self._reserve()
+        req = urllib.request.Request(url, headers={
+            "User-Agent": WEB_USER_AGENT,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.5",
+            "Accept-Language": "nb,no;q=0.9,en;q=0.8",
+        })
+        try:
+            with urllib.request.urlopen(req, timeout=self.timeout) as resp:
+                raw = resp.read(max_bytes)
+                charset = resp.headers.get_content_charset() or "utf-8"
+                try:
+                    text = raw.decode(charset, "replace")
+                except LookupError:
+                    text = raw.decode("utf-8", "replace")
+                return resp.status, text, resp.geturl()
+        except urllib.error.HTTPError as err:
+            return err.code, "", url
+        except Exception:
+            return 0, "", url
+
+    def get_json(self, url, params=None, headers=None):
         """Return (status_code, parsed_json_or_None). Network failures return (0, None)."""
         if params:
             url = url + "?" + urllib.parse.urlencode(params)
@@ -43,7 +66,7 @@ class Client:
         for attempt in range(self.retries + 1):
             self._reserve()
             req = urllib.request.Request(
-                url, headers={"Accept": "application/json", "User-Agent": USER_AGENT}
+                url, headers={"Accept": "application/json", "User-Agent": USER_AGENT, **(headers or {})}
             )
             try:
                 with urllib.request.urlopen(req, timeout=self.timeout) as resp:
@@ -67,12 +90,3 @@ class Client:
                     time.sleep(1.5 * (attempt + 1))
                     continue
         return last_status, None
-    
-    def budget_remaining(self):
-        """Return approximate remaining request budget."""
-        with self._lock:
-            return max(0, self.max_requests - self.requests_made)
-    
-    def time_remaining(self):
-        """Return approximate remaining time in seconds."""
-        return max(0, self.deadline - time.monotonic())
