@@ -1,0 +1,350 @@
+{
+ "orgnr": "984596847",
+ "checked_at": "2026-11-15T01:19:07+00:00",
+ "schema": 1,
+ "status": "active",
+ "kind": "enhet",
+ "facts": {
+  "name": {
+   "value": "FATBACK ANS",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "legal_form": {
+   "value": "Ansvarlig selskap med solidarisk ansvar",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "code": "ANS",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "registered_in_enhetsregisteret": {
+   "value": "2002-08-15",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "as_of": "2002-08-15",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "founded": {
+   "value": "2002-07-17",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "as_of": "2002-07-17",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "business_address": {
+   "value": "Thrond Nergaards veg 4A, 7044 TRONDHEIM",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "municipality": {
+   "value": "TRONDHEIM",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "industry_1": {
+   "value": "Detaljhandel med kulturvarer ikke nevnt annet sted",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "code": "47.690",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "institutional_sector": {
+   "value": "Personlige foretak",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "code": "2300",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "vat_registered": {
+   "value": false,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "in_business_register": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "email": {
+   "value": "erikbruset@gmail.com",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "stated_purpose": {
+   "value": "Handel med vinylplater, VHS, CD og DVD plater og produkter som naturlig hører sammen med dette, samt deltakelse i andre virksomheter innenfor samme bransje.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "stated_activity": {
+   "value": "Butikkhandel med salg av vinylplater ( LP's), klær, og import. Samt arrangør av party's og dj-virksomhet og alt naturlig tilhørende.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "sub_units": {
+   "value": 0,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=984596847",
+   "retrieved_at": "2026-11-15T01:19:07+00:00",
+   "source_url_note": "count of registered sub-units",
+   "first_seen": "2026-11-15T01:19:07+00:00",
+   "last_changed": "2026-11-15T01:19:07+00:00"
+  },
+  "summary": {
+   "value": "FATBACK ANS (ansvarlig selskap med solidarisk ansvar) is based in Trondheim, registered in the Brønnøysund register on 2002-08-15. Its main industry in the register is detaljhandel med kulturvarer ikke nevnt annet sted. Not found: a verified own website, a recent dated news item, an open job posting, a social media page.",
+   "source": "Signalpost summary of the sourced facts on this profile",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+   "retrieved_at": "2026-11-15T01:21:16+00:00",
+   "evidence": "built only from the facts listed on this profile",
+   "first_seen": "2026-11-15T01:21:16+00:00",
+   "last_changed": "2026-11-15T01:21:16+00:00"
+  }
+ },
+ "changes": [],
+ "history": [],
+ "match": {
+  "checksum_valid": true,
+  "requested": "984596847",
+  "returned": "984596847",
+  "matches_request": true,
+  "registry": "enheter"
+ },
+ "explanation": [
+  "Matched on organisation number 984596847: checksum valid, and the register returned the same number.",
+  "No annual accounts are published for this number. Small sole proprietorships and many associations are not required to file.",
+  "Web: Could not open https://www.fatback.no/ (domain guess (.no), HTTP 0).",
+  "Web: Rejected https://www.fatback.com/ (domain guess (.com)): the name is too short to be matched by name alone.",
+  "Web: No own website could be verified, so no news, jobs or social pages are published."
+ ],
+ "first_checked_at": "2026-11-15T01:19:07+00:00",
+ "register_site": null,
+ "web": {
+  "status": "no_site",
+  "checked_at": "2026-11-15T01:21:16+00:00",
+  "notes": [
+   "Could not open https://www.fatback.no/ (domain guess (.no), HTTP 0).",
+   "Rejected https://www.fatback.com/ (domain guess (.com)): the name is too short to be matched by name alone.",
+   "No own website could be verified, so no news, jobs or social pages are published."
+  ]
+ },
+ "not_found": [
+  "a verified own website",
+  "a recent dated news item",
+  "an open job posting",
+  "a social media page"
+ ],
+ "envelope": {
+  "legal_identity": {
+   "organisation_number": "984596847",
+   "name": "FATBACK ANS",
+   "legal_form": "Ansvarlig selskap med solidarisk ansvar",
+   "legal_form_code": "ANS",
+   "business_address": "Thrond Nergaards veg 4A, 7044 TRONDHEIM",
+   "municipality": "TRONDHEIM",
+   "postal_address": null,
+   "founded": "2002-07-17",
+   "industry": "Detaljhandel med kulturvarer ikke nevnt annet sted",
+   "industry_code": "47.690",
+   "employees": null,
+   "status": "active"
+  },
+  "annual_accounts": {
+   "state": "not_available",
+   "revenue": null,
+   "operating_result": null,
+   "net_result": null,
+   "total_assets": null,
+   "equity": null,
+   "currency": null,
+   "period_end": null,
+   "period_start": null
+  },
+  "leadership": {
+   "ceo": {
+    "state": "not_available",
+    "value": null
+   },
+   "board_chair": {
+    "state": "not_available",
+    "value": null
+   },
+   "board_size": {
+    "state": "not_available",
+    "value": null,
+    "members": null
+   },
+   "auditor": {
+    "state": "not_available",
+    "value": null
+   },
+   "accountant": {
+    "state": "not_available",
+    "value": null
+   },
+   "sub_units": {
+    "state": "available",
+    "value": 0
+   }
+  },
+  "web_presence": {
+   "verified_website": {
+    "state": "not_available",
+    "value": null,
+    "verification_method": null,
+    "evidence": null
+   },
+   "registry_website": {
+    "state": "not_available",
+    "value": null
+   },
+   "social_profiles": {
+    "state": "not_available"
+   }
+  },
+  "activity": {
+   "job_postings": {
+    "state": "not_available",
+    "items": [],
+    "careers_page": null
+   },
+   "recent_news": {
+    "state": "not_available",
+    "latest_title": null,
+    "latest_date": null,
+    "source_url": null
+   }
+  },
+  "evidence": {
+   "name": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "legal_form": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "registered_in_enhetsregisteret": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": "2002-08-15"
+   },
+   "founded": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": "2002-07-17"
+   },
+   "business_address": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "municipality": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "industry_1": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "institutional_sector": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "vat_registered": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "in_business_register": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "email": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "stated_purpose": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "stated_activity": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "sub_units": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=984596847",
+    "retrieved_at": "2026-11-15T01:19:07+00:00",
+    "as_of": null
+   },
+   "summary": {
+    "source": "Signalpost summary of the sourced facts on this profile",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/984596847",
+    "retrieved_at": "2026-11-15T01:21:16+00:00",
+    "as_of": null,
+    "evidence": "built only from the facts listed on this profile"
+   }
+  },
+  "refresh": {
+   "checked_at": "2026-11-15T01:19:07+00:00",
+   "first_checked_at": "2026-11-15T01:19:07+00:00",
+   "changes_detected": 0,
+   "web_status": "no_site"
+  }
+ }
+}

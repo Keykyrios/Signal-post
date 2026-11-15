@@ -1,0 +1,290 @@
+{
+ "orgnr": "999665675",
+ "checked_at": "2026-11-15T01:44:16+00:00",
+ "schema": 1,
+ "status": "active",
+ "kind": "enhet",
+ "facts": {
+  "name": {
+   "value": "DINCARE AS",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "legal_form": {
+   "value": "Aksjeselskap",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "code": "AS",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "registered_in_enhetsregisteret": {
+   "value": "2013-02-12",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2013-02-12",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "founded": {
+   "value": "2013-01-22",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2013-01-22",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "business_address": {
+   "value": "Industriveien 11A, 2020 SKEDSMOKORSET",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "municipality": {
+   "value": "LILLESTRØM",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "postal_address": {
+   "value": "Skogfaret 19, 2020 SKEDSMOKORSET",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "industry_1": {
+   "value": "Dataprogrammeringstjenester",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "code": "62.100",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "employees": {
+   "value": 8,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "institutional_sector": {
+   "value": "Private aksjeselskaper mv.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "code": "2100",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "vat_registered": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "in_business_register": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "email": {
+   "value": "post@dincare.no",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "phone": {
+   "value": "955 52 236",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "stated_purpose": {
+   "value": "Utvikling og salg av software og tjenester innen informasjonsteknologi. Forskning og utvikling av ny datateknologi til industriell automatisering, robot, og bilindustrien. Biltester, bilutleie, handel med biler og andre produkter/tjenester som naturlig hører sammen med dette.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "stated_activity": {
+   "value": "Utvikling og salg av software og tjenester innen informasjonsteknologi. Forskning og utvikling av ny datateknologi til industriell automatisering, robot, og bilindustrien. Kjøp og salg av elektronisk utstyr og datautstyr. Salg av produkter og tjenester innen industriell automatisering, robot, og bilindustrien. Biltester, bilutleie, import og eksport av biler, og handel med biler og bildeler.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "last_filed_accounts_year": {
+   "value": "2025",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "sub_units": {
+   "value": 1,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "source_url_note": "count of registered sub-units",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "ceo": {
+   "value": "Jie Xiang",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675/roller",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "board_chair": {
+   "value": "Jie Xiang",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675/roller",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "auditor": {
+   "value": "AS REVISION",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675/roller",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "board_size": {
+   "value": 1,
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675/roller",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "members": [
+    "Jie Xiang"
+   ],
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "revenue": {
+   "value": 22262311.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "operating_result": {
+   "value": 4477536.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "net_result": {
+   "value": 3463689.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "total_assets": {
+   "value": 7557601.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "equity": {
+   "value": 5634499.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999665675",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "summary": {
+   "value": "DINCARE AS (aksjeselskap) is based in Lillestrøm, registered in the Brønnøysund register on 2013-02-12. Its main industry in the register is dataprogrammeringstjenester. The register lists 8 employees. Not found: a verified own website, a recent dated news item, an open job posting, a social media page.",
+   "source": "Signalpost summary of the sourced facts on this profile",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665675",
+   "retrieved_at": "2026-11-15T01:44:26+00:00",
+   "evidence": "built only from the facts listed on this profile",
+   "first_seen": "2026-11-15T01:44:26+00:00",
+   "last_changed": "2026-11-15T01:44:26+00:00"
+  }
+ },
+ "changes": [],
+ "history": [],
+ "match": {
+  "checksum_valid": true,
+  "requested": "999665675",
+  "returned": "999665675",
+  "matches_request": true,
+  "registry": "enheter"
+ },
+ "explanation": [
+  "Matched on organisation number 999665675: checksum valid, and the register returned the same number.",
+  "Web: Rejected https://www.dincare.no/ (declared in the register): the name is too short to be matched by name alone.",
+  "Web: Rejected https://www.dincare.com/ (domain guess (.com)): the name is too short to be matched by name alone.",
+  "Web: No own website could be verified, so no news, jobs or social pages are published."
+ ],
+ "first_checked_at": "2026-11-15T01:44:16+00:00",
+ "register_site": "www.dincare.no",
+ "web": {
+  "status": "no_site",
+  "checked_at": "2026-11-15T01:44:26+00:00",
+  "notes": [
+   "Rejected https://www.dincare.no/ (declared in the register): the name is too short to be matched by name alone.",
+   "Rejected https://www.dincare.com/ (domain guess (.com)): the name is too short to be matched by name alone.",
+   "No own website could be verified, so no news, jobs or social pages are published."
+  ]
+ },
+ "not_found": [
+  "a verified own website",
+  "a recent dated news item",
+  "an open job posting",
+  "a social media page"
+ ]
+}

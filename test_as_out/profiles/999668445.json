@@ -1,0 +1,260 @@
+{
+ "orgnr": "999668445",
+ "checked_at": "2026-11-15T01:43:59+00:00",
+ "schema": 1,
+ "status": "active",
+ "kind": "enhet",
+ "facts": {
+  "name": {
+   "value": "ENH PROSJEKT AS",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "legal_form": {
+   "value": "Aksjeselskap",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "code": "AS",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "registered_in_enhetsregisteret": {
+   "value": "2013-02-09",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2013-02-09",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "founded": {
+   "value": "2013-01-18",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2013-01-18",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "business_address": {
+   "value": "Terminalgata 160, 9019 TROMSØ",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "municipality": {
+   "value": "TROMSØ",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "industry_1": {
+   "value": "Utvikling og salg av byggeprosjekter",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "code": "68.120",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "institutional_sector": {
+   "value": "Private aksjeselskaper mv.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "code": "2100",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "vat_registered": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "in_business_register": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "email": {
+   "value": "post@eiendom-norskehus.no",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "stated_purpose": {
+   "value": "Å drive utvikling og salg av fast eiendom, samt oppføring av bygninger og det som faller naturlig inn under disse. I tillegg kjøp og salg av varer.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "stated_activity": {
+   "value": "Å drive utvikling og salg av fast eiendom, samt oppføring av bygninger og det som faller naturlig inn under disse. I tillegg kjøp og salg av varer.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "last_filed_accounts_year": {
+   "value": "2025",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "sub_units": {
+   "value": 1,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "source_url_note": "count of registered sub-units",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "ceo": {
+   "value": "Gunn Merete Berg",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445/roller",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "board_chair": {
+   "value": "Ronny Karlsen",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445/roller",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "auditor": {
+   "value": "REVISORENE HELBERG & ØVERÅS AS",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445/roller",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "board_size": {
+   "value": 4,
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999668445/roller",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "members": [
+    "Ronny Karlsen",
+    "Erlend Bratland",
+    "Gunn Merete Berg",
+    "Steve Berg"
+   ],
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "revenue": {
+   "value": 2865223.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "operating_result": {
+   "value": 868251.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "net_result": {
+   "value": 8407579.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "total_assets": {
+   "value": 38025883.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "equity": {
+   "value": 27666210.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999668445",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  }
+ },
+ "changes": [],
+ "history": [],
+ "match": {
+  "checksum_valid": true,
+  "requested": "999668445",
+  "returned": "999668445",
+  "matches_request": true,
+  "registry": "enheter"
+ },
+ "explanation": [
+  "Matched on organisation number 999668445: checksum valid, and the register returned the same number.",
+  "Web: Could not open https://www.enh-prosjekt.no/ (domain guess (.no), HTTP 0).",
+  "Web: Could not open https://www.enhprosjekt.no/ (domain guess (concat .no), HTTP 0).",
+  "Web: Could not open https://www.prosjekt.no/ (domain guess (last word .no), HTTP 0).",
+  "Web: Could not open https://www.enh-prosjekt.com/ (domain guess (.com), HTTP 0).",
+  "Web: No own website could be verified, so no news, jobs or social pages are published.",
+  "Web: The lookup failed, so earlier web facts, if any, are kept."
+ ],
+ "first_checked_at": "2026-11-15T01:43:59+00:00",
+ "register_site": null,
+ "web": {
+  "status": "error",
+  "checked_at": "2026-11-15T01:45:08+00:00",
+  "notes": [
+   "Could not open https://www.enh-prosjekt.no/ (domain guess (.no), HTTP 0).",
+   "Could not open https://www.enhprosjekt.no/ (domain guess (concat .no), HTTP 0).",
+   "Could not open https://www.prosjekt.no/ (domain guess (last word .no), HTTP 0).",
+   "Could not open https://www.enh-prosjekt.com/ (domain guess (.com), HTTP 0).",
+   "No own website could be verified, so no news, jobs or social pages are published.",
+   "The lookup failed, so earlier web facts, if any, are kept."
+  ]
+ }
+}

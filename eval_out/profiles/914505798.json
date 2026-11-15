@@ -1,0 +1,326 @@
+{
+ "orgnr": "914505798",
+ "checked_at": "2026-11-15T01:18:34+00:00",
+ "schema": 1,
+ "status": "active",
+ "kind": "enhet",
+ "facts": {
+  "name": {
+   "value": "ABDOURAHAMANE DIALLO",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "legal_form": {
+   "value": "Enkeltpersonforetak",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "code": "ENK",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "registered_in_enhetsregisteret": {
+   "value": "2014-11-21",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "as_of": "2014-11-21",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "business_address": {
+   "value": "Blekenberg 9, 5055 BERGEN",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "municipality": {
+   "value": "BERGEN",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "industry_1": {
+   "value": "Passasjertransport på forespørsel utført av fører med kjøretøy",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "code": "49.330",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "institutional_sector": {
+   "value": "Personlig næringsdrivende",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "code": "8200",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "vat_registered": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "in_business_register": {
+   "value": false,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "stated_activity": {
+   "value": "Drosjetransport.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "sub_units": {
+   "value": 1,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=914505798",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "source_url_note": "count of registered sub-units",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "accountant": {
+   "value": "TAXIREGNSKAP AS; CONTROLLER AS",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798/roller",
+   "retrieved_at": "2026-11-15T01:18:34+00:00",
+   "first_seen": "2026-11-15T01:18:34+00:00",
+   "last_changed": "2026-11-15T01:18:34+00:00"
+  },
+  "summary": {
+   "value": "ABDOURAHAMANE DIALLO (enkeltpersonforetak) is based in Bergen, registered in the Brønnøysund register on 2014-11-21. Its main industry in the register is passasjertransport på forespørsel utført av fører med kjøretøy. Not found: a verified own website, a recent dated news item, an open job posting, a social media page.",
+   "source": "Signalpost summary of the sourced facts on this profile",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+   "retrieved_at": "2026-11-15T01:23:03+00:00",
+   "evidence": "built only from the facts listed on this profile"
+  }
+ },
+ "changes": [],
+ "history": [],
+ "match": {
+  "checksum_valid": true,
+  "requested": "914505798",
+  "returned": "914505798",
+  "matches_request": true,
+  "registry": "enheter"
+ },
+ "explanation": [
+  "Matched on organisation number 914505798: checksum valid, and the register returned the same number.",
+  "No annual accounts are published for this number. Small sole proprietorships and many associations are not required to file.",
+  "Sole proprietorship: the owner is the legal person, so no separate board is registered.",
+  "Web: Could not open https://www.abdourahamane-diallo.no/ (domain guess (.no), HTTP 0).",
+  "Web: Could not open https://www.abdourahamane.no/ (domain guess (first word .no), HTTP 0).",
+  "Web: Could not open https://www.abdourahamanediallo.no/ (domain guess (concat .no), HTTP 0).",
+  "Web: Could not open https://www.abdourahamane-diallo.com/ (domain guess (.com), HTTP 0).",
+  "Web: No own website could be verified, so no news, jobs or social pages are published.",
+  "Web: The lookup failed, so earlier web facts, if any, are kept."
+ ],
+ "first_checked_at": "2026-11-15T01:18:34+00:00",
+ "register_site": null,
+ "web": {
+  "status": "error",
+  "checked_at": "2026-11-15T01:20:23+00:00",
+  "notes": [
+   "Could not open https://www.abdourahamane-diallo.no/ (domain guess (.no), HTTP 0).",
+   "Could not open https://www.abdourahamane.no/ (domain guess (first word .no), HTTP 0).",
+   "Could not open https://www.abdourahamanediallo.no/ (domain guess (concat .no), HTTP 0).",
+   "Could not open https://www.abdourahamane-diallo.com/ (domain guess (.com), HTTP 0).",
+   "No own website could be verified, so no news, jobs or social pages are published.",
+   "The lookup failed, so earlier web facts, if any, are kept."
+  ]
+ },
+ "not_found": [
+  "a verified own website",
+  "a recent dated news item",
+  "an open job posting",
+  "a social media page"
+ ],
+ "envelope": {
+  "legal_identity": {
+   "organisation_number": "914505798",
+   "name": "ABDOURAHAMANE DIALLO",
+   "legal_form": "Enkeltpersonforetak",
+   "legal_form_code": "ENK",
+   "business_address": "Blekenberg 9, 5055 BERGEN",
+   "municipality": "BERGEN",
+   "postal_address": null,
+   "founded": null,
+   "industry": "Passasjertransport på forespørsel utført av fører med kjøretøy",
+   "industry_code": "49.330",
+   "employees": null,
+   "status": "active"
+  },
+  "annual_accounts": {
+   "state": "not_available",
+   "revenue": null,
+   "operating_result": null,
+   "net_result": null,
+   "total_assets": null,
+   "equity": null,
+   "currency": null,
+   "period_end": null,
+   "period_start": null
+  },
+  "leadership": {
+   "ceo": {
+    "state": "not_available",
+    "value": null
+   },
+   "board_chair": {
+    "state": "not_available",
+    "value": null
+   },
+   "board_size": {
+    "state": "not_available",
+    "value": null,
+    "members": null
+   },
+   "auditor": {
+    "state": "not_available",
+    "value": null
+   },
+   "accountant": {
+    "state": "available",
+    "value": "TAXIREGNSKAP AS; CONTROLLER AS"
+   },
+   "sub_units": {
+    "state": "available",
+    "value": 1
+   }
+  },
+  "web_presence": {
+   "verified_website": {
+    "state": "not_available",
+    "value": null,
+    "verification_method": null,
+    "evidence": null
+   },
+   "registry_website": {
+    "state": "not_available",
+    "value": null
+   },
+   "social_profiles": {
+    "state": "not_available"
+   }
+  },
+  "activity": {
+   "job_postings": {
+    "state": "not_available",
+    "items": [],
+    "careers_page": null
+   },
+   "recent_news": {
+    "state": "not_available",
+    "latest_title": null,
+    "latest_date": null,
+    "source_url": null
+   }
+  },
+  "evidence": {
+   "name": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": null
+   },
+   "legal_form": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": null
+   },
+   "registered_in_enhetsregisteret": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": "2014-11-21"
+   },
+   "business_address": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": null
+   },
+   "municipality": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": null
+   },
+   "industry_1": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": null
+   },
+   "institutional_sector": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": null
+   },
+   "vat_registered": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": null
+   },
+   "in_business_register": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": null
+   },
+   "stated_activity": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": null
+   },
+   "sub_units": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=914505798",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": null
+   },
+   "accountant": {
+    "source": "Enhetsregisteret roles",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798/roller",
+    "retrieved_at": "2026-11-15T01:18:34+00:00",
+    "as_of": null
+   },
+   "summary": {
+    "source": "Signalpost summary of the sourced facts on this profile",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914505798",
+    "retrieved_at": "2026-11-15T01:23:03+00:00",
+    "as_of": null,
+    "evidence": "built only from the facts listed on this profile"
+   }
+  },
+  "refresh": {
+   "checked_at": "2026-11-15T01:18:34+00:00",
+   "first_checked_at": "2026-11-15T01:18:34+00:00",
+   "changes_detected": 0,
+   "web_status": "error"
+  }
+ }
+}

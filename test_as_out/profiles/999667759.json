@@ -1,0 +1,250 @@
+{
+ "orgnr": "999667759",
+ "checked_at": "2026-11-15T01:43:59+00:00",
+ "schema": 1,
+ "status": "active",
+ "kind": "enhet",
+ "facts": {
+  "name": {
+   "value": "FORAS AS",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "legal_form": {
+   "value": "Aksjeselskap",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "code": "AS",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "registered_in_enhetsregisteret": {
+   "value": "2013-02-09",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2013-02-09",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "founded": {
+   "value": "2013-01-01",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2013-01-01",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "business_address": {
+   "value": "Solsletta 15D, 6030 LANGEVÅG",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "municipality": {
+   "value": "SULA",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "industry_1": {
+   "value": "Bedriftsrådgivning og annen administrativ rådgivning",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "code": "70.200",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "institutional_sector": {
+   "value": "Private aksjeselskaper mv.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "code": "2100",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "vat_registered": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "in_business_register": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "stated_purpose": {
+   "value": "Salg av konsulenttjenester, hovedsaklig bedriftsrådgivning, samt investering i eiendom og verdipapir, passivt/aktivt eierskap innen flere bransjer, samt hva herved står i forbindelse, herunder deltakelse i andre selskaper.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "stated_activity": {
+   "value": "Salg av konsulenttjenester, hovedsaklig bedriftsrådgivning, samt investering i eiendom og verdipapir, passivt/aktivt eierskap innen flere bransjer, samt hva herved står i forbindelse, herunder deltakelse i andre selskaper.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "last_filed_accounts_year": {
+   "value": "2025",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "sub_units": {
+   "value": 1,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "source_url_note": "count of registered sub-units",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "ceo": {
+   "value": "Runar Holen",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759/roller",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "board_chair": {
+   "value": "Runar Holen",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759/roller",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "board_size": {
+   "value": 1,
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759/roller",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "members": [
+    "Runar Holen"
+   ],
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "revenue": {
+   "value": 1556074.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "operating_result": {
+   "value": 306423.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "net_result": {
+   "value": 289850.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "total_assets": {
+   "value": 846396.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "equity": {
+   "value": 41554.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999667759",
+   "retrieved_at": "2026-11-15T01:43:59+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:43:59+00:00",
+   "last_changed": "2026-11-15T01:43:59+00:00"
+  },
+  "summary": {
+   "value": "FORAS AS (aksjeselskap) is based in Sula, registered in the Brønnøysund register on 2013-02-09. Its main industry in the register is bedriftsrådgivning og annen administrativ rådgivning. Not found: a verified own website, a recent dated news item, an open job posting, a social media page.",
+   "source": "Signalpost summary of the sourced facts on this profile",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999667759",
+   "retrieved_at": "2026-11-15T01:44:23+00:00",
+   "evidence": "built only from the facts listed on this profile",
+   "first_seen": "2026-11-15T01:44:23+00:00",
+   "last_changed": "2026-11-15T01:44:23+00:00"
+  }
+ },
+ "changes": [],
+ "history": [],
+ "match": {
+  "checksum_valid": true,
+  "requested": "999667759",
+  "returned": "999667759",
+  "matches_request": true,
+  "registry": "enheter"
+ },
+ "explanation": [
+  "Matched on organisation number 999667759: checksum valid, and the register returned the same number.",
+  "Web: Rejected https://www.foras.no/ (declared in the register): the name is too short to be matched by name alone.",
+  "Web: Could not open https://www.foras.com/ (domain guess (.com), HTTP 0).",
+  "Web: No own website could be verified, so no news, jobs or social pages are published."
+ ],
+ "first_checked_at": "2026-11-15T01:43:59+00:00",
+ "register_site": "www.foras.no",
+ "web": {
+  "status": "no_site",
+  "checked_at": "2026-11-15T01:44:23+00:00",
+  "notes": [
+   "Rejected https://www.foras.no/ (declared in the register): the name is too short to be matched by name alone.",
+   "Could not open https://www.foras.com/ (domain guess (.com), HTTP 0).",
+   "No own website could be verified, so no news, jobs or social pages are published."
+  ]
+ },
+ "not_found": [
+  "a verified own website",
+  "a recent dated news item",
+  "an open job posting",
+  "a social media page"
+ ]
+}

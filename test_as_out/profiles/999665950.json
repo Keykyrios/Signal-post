@@ -1,0 +1,274 @@
+{
+ "orgnr": "999665950",
+ "checked_at": "2026-11-15T01:44:16+00:00",
+ "schema": 1,
+ "status": "active",
+ "kind": "enhet",
+ "facts": {
+  "name": {
+   "value": "WORLEY NORWAY HOLDING AS",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "legal_form": {
+   "value": "Aksjeselskap",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "code": "AS",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "registered_in_enhetsregisteret": {
+   "value": "2013-02-09",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2013-02-09",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "founded": {
+   "value": "2013-01-29",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2013-01-29",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "business_address": {
+   "value": "Bangarvågsgata 15, 4077 HUNDVÅG",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "municipality": {
+   "value": "STAVANGER",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "postal_address": {
+   "value": "Postboks 54   Hundvåg, 4086 HUNDVÅG",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "industry_1": {
+   "value": "Bygging av sivile skip og flytende materiell",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "code": "30.110",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "institutional_sector": {
+   "value": "Private aksjeselskaper mv.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "code": "2100",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "vat_registered": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "in_business_register": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "phone": {
+   "value": "51 93 10 00",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "stated_purpose": {
+   "value": "Investering og deltagelse i andre selskaper, samt det som naturlig hører her til.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "stated_activity": {
+   "value": "Investering og deltagelse i andre selskaper, samt det som naturlig hører her til.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "last_filed_accounts_year": {
+   "value": "2025",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "sub_units": {
+   "value": 0,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "source_url_note": "count of registered sub-units",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "ceo": {
+   "value": "Jan Trygve Narvestad",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950/roller",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "board_chair": {
+   "value": "Mohammed Hicham Kabbaj",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950/roller",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "auditor": {
+   "value": "PRICEWATERHOUSECOOPERS AS",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950/roller",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "board_size": {
+   "value": 2,
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950/roller",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "members": [
+    "Mohammed Hicham Kabbaj",
+    "Jan Trygve Narvestad"
+   ],
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "operating_result": {
+   "value": -36627.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-06-30",
+   "currency": "NOK",
+   "period_start": "2024-07-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "net_result": {
+   "value": 330088933.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-06-30",
+   "currency": "NOK",
+   "period_start": "2024-07-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "total_assets": {
+   "value": 1081093547.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-06-30",
+   "currency": "NOK",
+   "period_start": "2024-07-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "equity": {
+   "value": 751593547.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999665950",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-06-30",
+   "currency": "NOK",
+   "period_start": "2024-07-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "summary": {
+   "value": "WORLEY NORWAY HOLDING AS (aksjeselskap) is based in Stavanger, registered in the Brønnøysund register on 2013-02-09. Its main industry in the register is bygging av sivile skip og flytende materiell. Not found: a verified own website, a recent dated news item, an open job posting, a social media page.",
+   "source": "Signalpost summary of the sourced facts on this profile",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999665950",
+   "retrieved_at": "2026-11-15T01:46:07+00:00",
+   "evidence": "built only from the facts listed on this profile",
+   "first_seen": "2026-11-15T01:46:07+00:00",
+   "last_changed": "2026-11-15T01:46:07+00:00"
+  }
+ },
+ "changes": [],
+ "history": [],
+ "match": {
+  "checksum_valid": true,
+  "requested": "999665950",
+  "returned": "999665950",
+  "matches_request": true,
+  "registry": "enheter"
+ },
+ "explanation": [
+  "Matched on organisation number 999665950: checksum valid, and the register returned the same number.",
+  "Web: Could not open https://www.worley-norway-holding.no/ (domain guess (.no), HTTP 0).",
+  "Web: Rejected https://www.worley.no/ (domain guess (first word .no)): page does not show the company name.",
+  "Web: Could not open https://www.worleynorwayholding.no/ (domain guess (concat .no), HTTP 0).",
+  "Web: Could not open https://www.worleynorway.no/ (domain guess (two-word .no), HTTP 0).",
+  "Web: Could not open https://www.holding.no/ (domain guess (last word .no), HTTP 0).",
+  "Web: Could not open https://www.worley-norway-holding.com/ (domain guess (.com), HTTP 0).",
+  "Web: Rejected https://wnh.no/ (domain guess (initials .no)): page does not show the company name.",
+  "Web: No own website could be verified, so no news, jobs or social pages are published."
+ ],
+ "first_checked_at": "2026-11-15T01:44:16+00:00",
+ "register_site": null,
+ "web": {
+  "status": "no_site",
+  "checked_at": "2026-11-15T01:46:07+00:00",
+  "notes": [
+   "Could not open https://www.worley-norway-holding.no/ (domain guess (.no), HTTP 0).",
+   "Rejected https://www.worley.no/ (domain guess (first word .no)): page does not show the company name.",
+   "Could not open https://www.worleynorwayholding.no/ (domain guess (concat .no), HTTP 0).",
+   "Could not open https://www.worleynorway.no/ (domain guess (two-word .no), HTTP 0).",
+   "Could not open https://www.holding.no/ (domain guess (last word .no), HTTP 0).",
+   "Could not open https://www.worley-norway-holding.com/ (domain guess (.com), HTTP 0).",
+   "Rejected https://wnh.no/ (domain guess (initials .no)): page does not show the company name.",
+   "No own website could be verified, so no news, jobs or social pages are published."
+  ]
+ },
+ "not_found": [
+  "a verified own website",
+  "a recent dated news item",
+  "an open job posting",
+  "a social media page"
+ ]
+}

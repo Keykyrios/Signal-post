@@ -1,0 +1,284 @@
+{
+ "orgnr": "999666965",
+ "checked_at": "2026-11-15T01:44:05+00:00",
+ "schema": 1,
+ "status": "active",
+ "kind": "enhet",
+ "facts": {
+  "name": {
+   "value": "INNHERRED HELSEHUS AS",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "legal_form": {
+   "value": "Aksjeselskap",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "code": "AS",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "registered_in_enhetsregisteret": {
+   "value": "2013-02-19",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "as_of": "2013-02-19",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "founded": {
+   "value": "2013-01-15",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "as_of": "2013-01-15",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "business_address": {
+   "value": "Helge Ingstads veg 1, 7600 LEVANGER",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "municipality": {
+   "value": "LEVANGER",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "industry_1": {
+   "value": "Allmennlegetjenester",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "code": "86.210",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "institutional_sector": {
+   "value": "Private aksjeselskaper mv.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "code": "2100",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "vat_registered": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "in_business_register": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "stated_purpose": {
+   "value": "Drive helsesenter, helsetjenester, salg samt deltagelse i selskaper av samme eller annen art gjennom aksjetegning eller på annen måte. Videre kjøp, salg og drift av fast eiendom, kjøp og salg av aksjer og andre verdipapirer og hva som står i forbindelse med dette.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "stated_activity": {
+   "value": "Drive helsesenter, helsetjenester, salg samt deltagelse i selskaper av samme eller annen art gjennom aksjetegning eller på annen måte. Videre kjøp, salg og drift av fast eiendom, kjøp og salg av aksjer og andre verdipapirer og hva som står i forbindelse med dette.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "last_filed_accounts_year": {
+   "value": "2025",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "sub_units": {
+   "value": 1,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "source_url_note": "count of registered sub-units",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "ceo": {
+   "value": "Andreas Hopstock Storeheier",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965/roller",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "board_chair": {
+   "value": "Tommy Aune Rehn",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965/roller",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "auditor": {
+   "value": "BDO AS",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965/roller",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "accountant": {
+   "value": "ADMENTO AS",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965/roller",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "board_size": {
+   "value": 3,
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666965/roller",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "members": [
+    "Tommy Aune Rehn",
+    "Marianne Langøygard",
+    "Runar Jenssen"
+   ],
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "revenue": {
+   "value": 6215961.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "operating_result": {
+   "value": 2760005.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "net_result": {
+   "value": 796320.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "total_assets": {
+   "value": 39631983.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "equity": {
+   "value": 11662357.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666965",
+   "retrieved_at": "2026-11-15T01:44:05+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:05+00:00",
+   "last_changed": "2026-11-15T01:44:05+00:00"
+  },
+  "own_website": {
+   "value": "https://www.innherredhelsehus.no/",
+   "source": "Company's own website",
+   "source_url": "https://www.innherredhelsehus.no/",
+   "retrieved_at": "2026-11-15T01:44:35+00:00",
+   "match": "name_and_town",
+   "evidence": "page shows the name \"INNHERRED HELSEHUS AS\" and the registered town \"LEVANGER\"",
+   "found_via": "domain guess (concat .no)",
+   "first_seen": "2026-11-15T01:44:38+00:00",
+   "last_changed": "2026-11-15T01:44:38+00:00"
+  },
+  "summary": {
+   "value": "INNHERRED HELSEHUS AS (aksjeselskap) is based in Levanger, registered in the Brønnøysund register on 2013-02-19. Its main industry in the register is allmennlegetjenester. Its own website, https://www.innherredhelsehus.no/, shows the company name and town. Not found: a recent dated news item, an open job posting, a social media page.",
+   "source": "Signalpost summary of the sourced facts on this profile",
+   "source_url": "https://www.innherredhelsehus.no/",
+   "retrieved_at": "2026-11-15T01:44:38+00:00",
+   "evidence": "built only from the facts listed on this profile",
+   "first_seen": "2026-11-15T01:44:38+00:00",
+   "last_changed": "2026-11-15T01:44:38+00:00"
+  }
+ },
+ "changes": [],
+ "history": [],
+ "match": {
+  "checksum_valid": true,
+  "requested": "999666965",
+  "returned": "999666965",
+  "matches_request": true,
+  "registry": "enheter"
+ },
+ "explanation": [
+  "Matched on organisation number 999666965: checksum valid, and the register returned the same number.",
+  "Web: Could not open https://www.innherred-helsehus.no/ (domain guess (.no), HTTP 0).",
+  "Web: Rejected https://www.innherred.no/ (domain guess (first word .no)): page does not show the company name.",
+  "Web: Website https://www.innherredhelsehus.no/ accepted (domain guess (concat .no)): page shows the name \"INNHERRED HELSEHUS AS\" and the registered town \"LEVANGER\".",
+  "Web: No dated news item was found on the company's own website.",
+  "Web: No careers page is linked from the company's own website.",
+  "Web: No social media page is linked from the company's own website."
+ ],
+ "first_checked_at": "2026-11-15T01:44:05+00:00",
+ "register_site": null,
+ "web": {
+  "status": "verified",
+  "checked_at": "2026-11-15T01:44:38+00:00",
+  "notes": [
+   "Could not open https://www.innherred-helsehus.no/ (domain guess (.no), HTTP 0).",
+   "Rejected https://www.innherred.no/ (domain guess (first word .no)): page does not show the company name.",
+   "Website https://www.innherredhelsehus.no/ accepted (domain guess (concat .no)): page shows the name \"INNHERRED HELSEHUS AS\" and the registered town \"LEVANGER\".",
+   "No dated news item was found on the company's own website.",
+   "No careers page is linked from the company's own website.",
+   "No social media page is linked from the company's own website."
+  ]
+ },
+ "not_found": [
+  "a recent dated news item",
+  "an open job posting",
+  "a social media page"
+ ]
+}

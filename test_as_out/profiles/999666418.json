@@ -1,0 +1,273 @@
+{
+ "orgnr": "999666418",
+ "checked_at": "2026-11-15T01:44:11+00:00",
+ "schema": 1,
+ "status": "active",
+ "kind": "enhet",
+ "facts": {
+  "name": {
+   "value": "HELT DILLA AS",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "legal_form": {
+   "value": "Aksjeselskap",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "code": "AS",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "registered_in_enhetsregisteret": {
+   "value": "2013-02-13",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "as_of": "2013-02-13",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "founded": {
+   "value": "2013-02-01",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "as_of": "2013-02-01",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "business_address": {
+   "value": "Sætrealleen 5, 3475 SÆTRE",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "municipality": {
+   "value": "ASKER",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "industry_1": {
+   "value": "Detaljhandel med klær",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "code": "47.710",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "employees": {
+   "value": 6,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "institutional_sector": {
+   "value": "Private aksjeselskaper mv.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "code": "2100",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "vat_registered": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "in_business_register": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "stated_purpose": {
+   "value": "Salg av klær, sko, interiør og andre tilhørende produkter/tjenester som naturlig faller sammen med dette fra fysisk butikk og nettsalg.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "stated_activity": {
+   "value": "Salg av klær, sko, interiør og andre tilhørende produkter/tjenester som naturlig faller sammen med dette fra fysisk butikk og nettsalg.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "last_filed_accounts_year": {
+   "value": "2025",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "sub_units": {
+   "value": 1,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "source_url_note": "count of registered sub-units",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "ceo": {
+   "value": "Ann-Kristin Gjestemoen Torgersen",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418/roller",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "board_chair": {
+   "value": "Ann-Kristin Gjestemoen Torgersen",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418/roller",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "accountant": {
+   "value": "DMC REGNSKAP AS",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418/roller",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "board_size": {
+   "value": 2,
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418/roller",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "members": [
+    "Ann-Kristin Gjestemoen Torgersen",
+    "Live-Marie Gjestemoen Torgersen"
+   ],
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "revenue": {
+   "value": 6994048.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "operating_result": {
+   "value": -766685.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "net_result": {
+   "value": -869237.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "total_assets": {
+   "value": 1438265.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "equity": {
+   "value": -570323.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666418",
+   "retrieved_at": "2026-11-15T01:44:11+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:11+00:00",
+   "last_changed": "2026-11-15T01:44:11+00:00"
+  },
+  "summary": {
+   "value": "HELT DILLA AS (aksjeselskap) is based in Asker, registered in the Brønnøysund register on 2013-02-13. Its main industry in the register is detaljhandel med klær. The register lists 6 employees. Not found: a verified own website, a recent dated news item, an open job posting, a social media page.",
+   "source": "Signalpost summary of the sourced facts on this profile",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666418",
+   "retrieved_at": "2026-11-15T01:45:30+00:00",
+   "evidence": "built only from the facts listed on this profile",
+   "first_seen": "2026-11-15T01:45:30+00:00",
+   "last_changed": "2026-11-15T01:45:30+00:00"
+  }
+ },
+ "changes": [],
+ "history": [],
+ "match": {
+  "checksum_valid": true,
+  "requested": "999666418",
+  "returned": "999666418",
+  "matches_request": true,
+  "registry": "enheter"
+ },
+ "explanation": [
+  "Matched on organisation number 999666418: checksum valid, and the register returned the same number.",
+  "Web: Could not open https://www.helt-dilla.no/ (domain guess (.no), HTTP 0).",
+  "Web: Could not open https://www.helt.no/ (domain guess (first word .no), HTTP 0).",
+  "Web: Rejected https://heltdilla.no/ (domain guess (concat .no)): page does not show the registered town (SÆTRE).",
+  "Web: Could not open https://www.dilla.no/ (domain guess (last word .no), HTTP 0).",
+  "Web: Could not open https://www.helt-dilla.com/ (domain guess (.com), HTTP 0).",
+  "Web: No own website could be verified, so no news, jobs or social pages are published."
+ ],
+ "first_checked_at": "2026-11-15T01:44:11+00:00",
+ "register_site": null,
+ "web": {
+  "status": "no_site",
+  "checked_at": "2026-11-15T01:45:30+00:00",
+  "notes": [
+   "Could not open https://www.helt-dilla.no/ (domain guess (.no), HTTP 0).",
+   "Could not open https://www.helt.no/ (domain guess (first word .no), HTTP 0).",
+   "Rejected https://heltdilla.no/ (domain guess (concat .no)): page does not show the registered town (SÆTRE).",
+   "Could not open https://www.dilla.no/ (domain guess (last word .no), HTTP 0).",
+   "Could not open https://www.helt-dilla.com/ (domain guess (.com), HTTP 0).",
+   "No own website could be verified, so no news, jobs or social pages are published."
+  ]
+ },
+ "not_found": [
+  "a verified own website",
+  "a recent dated news item",
+  "an open job posting",
+  "a social media page"
+ ]
+}

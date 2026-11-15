@@ -35,10 +35,11 @@ BLOCKED_HOSTS = (
     "twitter.com", "x.com", "youtube.com", "brreg.no", "purehelp.no", "finn.no", "google.",
     "wikipedia.org", "bedriftsinfo.no", "opencorporates.com", "forvalt.no", "kompass.com",
     "regnskapstall.no", "bing.com", "duckduckgo.com", "tiktok.com", "pinterest.", "yelp.",
-    "tripadvisor.", "trustpilot.", "dnb.no", "bisnode.", "creditsafe.", "lusha.com", "zoominfo.com",
-    "rocketreach.co", "northdata.com", "yellowpages", "ntb.no", "e24.no", "dn.no", "nrk.no",
-    "vg.no", "bt.no", "regjeringen.no", "altinn.no", "skatteetaten.no", "nav.no", "indeed.",
+    "tripadvisor.", "trustpilot.", "bisnode.", "creditsafe.", "lusha.com", "zoominfo.com",
+    "rocketreach.co", "northdata.com", "yellowpages", "ntb.no",
+    "regjeringen.no", "altinn.no", "skatteetaten.no", "nav.no", "indeed.",
     "jooble.", "glassdoor.", "doffin.no", "telefonkatalogen.no", "firmaer.no", "brregstat.no",
+    "startpage.com", "microsoft.com", "support.microsoft.com",
 )
 COMPANY_SUFFIX = {"as", "asa", "ans", "da", "sa", "ba", "enk", "nuf", "ks", "stiftelse", "ltd", "gmbh", "ab", "oy", "inc", "llc"}
 NEWS_WORDS = ("nyheter", "nyhet", "news", "aktuelt", "presse", "blogg", "blog", "siste-nytt", "artikler", "pressemeldinger")
@@ -152,7 +153,7 @@ def in_future(day, today):
 import base64
 
 class Searcher:
-    """Web search. Brave API > Bing scrape > DuckDuckGo HTML, in that order."""
+    """Web search. Brave API > Bing RSS > Startpage > DuckDuckGo HTML, in that order."""
 
     def __init__(self, client, gap_seconds=1.2):
         self.client = client
@@ -162,18 +163,22 @@ class Searcher:
         self.queries = 0
         self.brave_key = os.environ.get("BRAVE_API_KEY")
         self.cost_per_query = float(os.environ.get("SIGNALPOST_SEARCH_COST_USD", "0") or 0)
+        self._dead_engines = set()  # engines that have failed, skip them
 
     @property
     def cost_usd(self):
         return round(self.queries * self.cost_per_query, 4)
 
-    def search(self, query, count=6):
+    def _throttle(self):
         with self.lock:
             wait = self.gap - (time.monotonic() - self.last)
             if wait > 0:
                 time.sleep(wait)
             self.last = time.monotonic()
             self.queries += 1
+
+    def search(self, query, count=6):
+        self._throttle()
         if self.brave_key:
             code, body = self.client.get_json(
                 "https://api.search.brave.com/res/v1/web/search",
@@ -183,20 +188,135 @@ class Searcher:
             if code == 200 and isinstance(body, dict):
                 return [r.get("url") for r in (dig(body, "web", "results") or []) if r.get("url")][:count]
             return []
-        # Try Bing first (more reliable), fall back to DuckDuckGo
-        results = self._bing_search(query, count)
-        if results:
-            return results
-        url = "https://html.duckduckgo.com/html/?" + urllib.parse.urlencode({"q": query, "kl": "no-no"})
+        # Try engines in order, skipping ones that already failed
+        engines = [("bing", self._bing_search), ("startpage", self._startpage_search), ("ddg", self._ddg_search)]
+        for name, engine in engines:
+            if name in self._dead_engines:
+                continue
+            results = engine(query, count)
+            if results:
+                return results
+            # Mark as dead after first failure to avoid repeated timeouts
+            self._dead_engines.add(name)
+        return []
+
+    def search_multi(self, queries, count=6):
+        """Try multiple query variants and merge results."""
+        all_urls = []
+        seen_hosts = set()
+        for q in queries:
+            self._throttle()
+            engines = [("bing", self._bing_search), ("startpage", self._startpage_search)]
+            found = False
+            for name, engine in engines:
+                if name in self._dead_engines:
+                    continue
+                results = engine(q, count)
+                if results:
+                    found = True
+                    for url in results:
+                        h = host_of(url)
+                        if h and h not in seen_hosts:
+                            seen_hosts.add(h)
+                            all_urls.append(url)
+                    break
+                else:
+                    self._dead_engines.add(name)
+            if len(all_urls) >= count:
+                break
+            # If first query returned nothing and all engines dead, bail
+            if not found and len(self._dead_engines) >= 2:
+                break
+        return all_urls[:count]
+
+    def _startpage_search(self, query, count):
+        """Startpage (privacy-focused Google proxy) - often returns better results than Bing."""
+        url = "https://www.startpage.com/sp/search?" + urllib.parse.urlencode({
+            "query": query, "cat": "web", "language": "norsk"
+        })
         code, text, _ = self.client.get_text(url)
-        return parse_ddg(text)[:count] if code == 200 else []
+        if code != 200 or not text:
+            return []
+        return parse_startpage(text)[:count]
 
     def _bing_search(self, query, count):
-        url = "https://www.bing.com/search?" + urllib.parse.urlencode({"q": query, "count": str(count)})
+        # Try RSS format first (works when HTML is JS-rendered)
+        rss_url = "https://www.bing.com/search?" + urllib.parse.urlencode({
+            "q": query, "format": "rss", "count": str(count)
+        })
+        code, text, _ = self.client.get_text(rss_url)
+        if code == 200 and text:
+            urls = parse_bing_rss(text)
+            if urls:
+                return urls[:count]
+        # Fall back to HTML scraping
+        url = "https://www.bing.com/search?" + urllib.parse.urlencode({
+            "q": query, "count": str(count), "setlang": "nb"
+        })
         code, text, _ = self.client.get_text(url)
         if code != 200 or not text:
             return []
         return parse_bing(text)[:count]
+
+    def _ddg_search(self, query, count):
+        url = "https://html.duckduckgo.com/html/?" + urllib.parse.urlencode({"q": query, "kl": "no-no"})
+        code, text, _ = self.client.get_text(url)
+        return parse_ddg(text)[:count] if code == 200 else []
+
+
+def parse_bing_rss(text):
+    """Extract URLs from Bing RSS search results."""
+    urls = []
+    try:
+        root = ET.fromstring(text.strip().encode("utf-8"))
+    except (ET.ParseError, ValueError):
+        return []
+    for item in root.iter():
+        if item.tag.split("}")[-1] == "item":
+            link = item.findtext("link", "")
+            if link and link.startswith("http") and not blocked(link):
+                urls.append(link)
+    # Deduplicate by host
+    seen = set()
+    unique = []
+    for u in urls:
+        h = host_of(u)
+        if h and h not in seen:
+            seen.add(h)
+            unique.append(u)
+    return unique
+
+
+def parse_startpage(text):
+    """Extract URLs from Startpage search results."""
+    urls = []
+    # Startpage wraps results in <a class="w-gl__result-url" href="...">
+    for m in re.finditer(r'class="w-gl__result-url"[^>]*href="([^"]+)"', text):
+        url = clean_url(html_mod.unescape(m.group(1)))
+        if url and not blocked(url):
+            urls.append(url)
+    # Also try generic result link patterns
+    if not urls:
+        for m in re.finditer(r'<a[^>]+class="[^"]*result[^"]*"[^>]*href="([^"]+)"', text):
+            url = clean_url(html_mod.unescape(m.group(1)))
+            if url and not blocked(url) and not "startpage.com" in (url or ""):
+                urls.append(url)
+    # Fallback: extract any href that looks like a result
+    if not urls:
+        for m in re.finditer(r'href="(https?://[^"]+)"', text):
+            url = m.group(1)
+            h = host_of(url)
+            if h and not blocked(url) and "startpage" not in h and "google" not in h:
+                urls.append(url)
+    # Deduplicate by host
+    seen = set()
+    unique = []
+    for u in urls:
+        h = host_of(u)
+        if h and h not in seen:
+            seen.add(h)
+            unique.append(u)
+    return unique
 
 
 def parse_bing(text):
@@ -275,7 +395,7 @@ def title_of(markup):
 def verify_page(markup, company):
     """Return (level, evidence) if the page is provably about this company, else (None, reason)."""
     text = strip_tags(markup)
-    if len(text) < 80:
+    if len(text) < 30:
         return None, "page has too little text to check"
     numbers = orgnrs_on_page(text)
     if len(numbers) > 4:
@@ -480,26 +600,55 @@ def _candidates(company, searcher, allow_search):
             seen.add(host_of(url))
             out.append((url, tag))
 
+    # 1. Registry declared site — highest confidence
     if company.get("declared_site"):
         add(company["declared_site"], "declared in the register")
 
-    # Domain guessing: try company-name.no (safe for Norwegian companies)
+    # 2. Domain guessing — try many patterns
     slug = _name_slug(company["name"])
-    if slug and len(slug) >= 4:
+    if slug and len(slug) >= 3:
+        # Full slug: company-name.no
         add("https://www.%s.no" % slug, "domain guess (.no)")
-        # For multi-word names, try first distinctive word
+        add("https://%s.no" % slug, "domain guess (no www)")
         parts = slug.split("-")
-        if len(parts) >= 2 and len(parts[0]) >= 5:
-            add("https://www.%s.no" % parts[0], "domain guess (short .no)")
+        if len(parts) >= 2:
+            # First word: nordvest.no from "nordvest shipping"
+            if len(parts[0]) >= 4:
+                add("https://www.%s.no" % parts[0], "domain guess (first word .no)")
+            # Concatenated: nordvestshipping.no
+            concat = "".join(parts)
+            add("https://www.%s.no" % concat, "domain guess (concat .no)")
+            # First two words: nordvestship.no
+            two = parts[0] + parts[1]
+            if len(two) >= 5 and two != concat:
+                add("https://www.%s.no" % two, "domain guess (two-word .no)")
+            # Last word if distinctive: shipping.no
+            if len(parts[-1]) >= 5 and parts[-1] != parts[0]:
+                add("https://www.%s.no" % parts[-1], "domain guess (last word .no)")
+        # .com variant
+        if len(slug) >= 4:
+            add("https://www.%s.com" % slug, "domain guess (.com)")
+        # Initials for long names: "nord vest shipping" -> "nvs.no"
+        if len(parts) >= 3:
+            initials = "".join(p[0] for p in parts if p)
+            if len(initials) >= 3:
+                add("https://www.%s.no" % initials, "domain guess (initials .no)")
 
-    if allow_search and searcher and len(out) < 3:
-        query = '"%s" %s' % (company["name"], company.get("town") or "")
-        for url in searcher.search(query.strip()):
+    # 3. Search engines (try if we don't have enough candidates yet)
+    if allow_search and searcher and len(out) < 4:
+        name = company["name"]
+        town = company.get("town") or ""
+        queries = [
+            '%s %s' % (name, town),
+            '"%s" nettside' % name,
+        ]
+        for url in searcher.search_multi(queries):
             parts = urllib.parse.urlsplit(url)
+            add(url, "search result")
             add(urllib.parse.urlunsplit((parts.scheme, parts.netloc, "/", "", "")), "search result")
-            if len(out) >= 4:
+            if len(out) >= 10:
                 break
-    return out[:4]
+    return out[:10]
 
 
 def company_view(profile):

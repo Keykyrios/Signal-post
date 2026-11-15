@@ -12,7 +12,7 @@ import urllib.parse
 import urllib.request
 
 USER_AGENT = "signalpost/1.0 (open-data profile agent; Brreg NLOD 2.0 data)"
-WEB_USER_AGENT = "Mozilla/5.0 (compatible; signalpost/1.0; company profile check)"
+WEB_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 
 
 class BudgetExceeded(Exception):

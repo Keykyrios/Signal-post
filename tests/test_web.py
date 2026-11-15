@@ -144,6 +144,8 @@ class WebTests(unittest.TestCase):
             queries = 0
             def search(self, q):
                 return ["https://www.proff.no/x", "https://testselskap.no/side", "https://no.linkedin.com/c"]
+            def search_multi(self, qs, count=6):
+                return ["https://www.proff.no/x", "https://testselskap.no/side", "https://no.linkedin.com/c"]
         p = profile()
         p["register_site"] = ""
         pages = self.pages()
@@ -191,7 +193,9 @@ class RunWebTests(unittest.TestCase):
         client = Both(routes(), pages)
         with tempfile.TemporaryDirectory() as tmp:
             profiles, report = runner.run([GOOD], tmp, client=client, log=lambda *_: None,
-                                          searcher=type("S", (), {"queries": 0, "cost_usd": 0.0, "search": lambda s, q: ["https://testselskap.no/x"]})())
+                                          searcher=type("S", (), {"queries": 0, "cost_usd": 0.0,
+                                                                   "search": lambda s, q: ["https://testselskap.no/x"],
+                                                                   "search_multi": lambda s, qs, count=6: ["https://testselskap.no/x"]})())
             saved = json.load(open(f"{tmp}/profiles/{GOOD}.json"))
         self.assertEqual(report["web_step"]["verified"], 1)
         self.assertEqual(report["profiles_with_verified_website"], 1)

@@ -1,0 +1,277 @@
+{
+ "orgnr": "999666019",
+ "checked_at": "2026-11-15T01:44:16+00:00",
+ "schema": 1,
+ "status": "active",
+ "kind": "enhet",
+ "facts": {
+  "name": {
+   "value": "NORDRE GATE 20-22 AS",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "legal_form": {
+   "value": "Aksjeselskap",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "code": "AS",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "registered_in_enhetsregisteret": {
+   "value": "2013-02-09",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2013-02-09",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "founded": {
+   "value": "2013-01-29",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2013-01-29",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "business_address": {
+   "value": "Vulkan 16, 0178 OSLO",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "municipality": {
+   "value": "OSLO",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "industry_1": {
+   "value": "Utvikling og salg av byggeprosjekter",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "code": "68.120",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "institutional_sector": {
+   "value": "Private aksjeselskaper mv.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "code": "2100",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "vat_registered": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "in_business_register": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "email": {
+   "value": "post@infill.no",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "phone": {
+   "value": "22 40 40 00",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "stated_purpose": {
+   "value": "Prosjektering, eiendomsutvikling, kjøp og salg av fast eiendom og alt som dermed står i forbindelse, samt investering og deltakelse i likeartet virksomhet.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "stated_activity": {
+   "value": "Prosjektering, eiendomsutvikling, kjøp og salg av fast eiendom",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "last_filed_accounts_year": {
+   "value": "2025",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "sub_units": {
+   "value": 1,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "source_url_note": "count of registered sub-units",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "board_chair": {
+   "value": "Ida Elisabeth Aall Gram",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019/roller",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "auditor": {
+   "value": "DELOITTE AS",
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019/roller",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "board_size": {
+   "value": 2,
+   "source": "Enhetsregisteret roles",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019/roller",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "members": [
+    "Ida Elisabeth Aall Gram",
+    "Jahn Christopher Utne"
+   ],
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "revenue": {
+   "value": 12953000.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "operating_result": {
+   "value": 9701000.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "net_result": {
+   "value": 8320000.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "total_assets": {
+   "value": 67161000.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "equity": {
+   "value": 64742000.0,
+   "source": "Regnskapsregisteret (annual accounts)",
+   "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/999666019",
+   "retrieved_at": "2026-11-15T01:44:16+00:00",
+   "as_of": "2025-12-31",
+   "currency": "NOK",
+   "period_start": "2025-01-01",
+   "first_seen": "2026-11-15T01:44:16+00:00",
+   "last_changed": "2026-11-15T01:44:16+00:00"
+  },
+  "summary": {
+   "value": "NORDRE GATE 20-22 AS (aksjeselskap) is based in Oslo, registered in the Brønnøysund register on 2013-02-09. Its main industry in the register is utvikling og salg av byggeprosjekter. Not found: a verified own website, a recent dated news item, an open job posting, a social media page.",
+   "source": "Signalpost summary of the sourced facts on this profile",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/999666019",
+   "retrieved_at": "2026-11-15T01:44:25+00:00",
+   "evidence": "built only from the facts listed on this profile",
+   "first_seen": "2026-11-15T01:44:25+00:00",
+   "last_changed": "2026-11-15T01:44:25+00:00"
+  }
+ },
+ "changes": [],
+ "history": [],
+ "match": {
+  "checksum_valid": true,
+  "requested": "999666019",
+  "returned": "999666019",
+  "matches_request": true,
+  "registry": "enheter"
+ },
+ "explanation": [
+  "Matched on organisation number 999666019: checksum valid, and the register returned the same number.",
+  "Web: Could not open https://www.infill.no/ (declared in the register, HTTP 500).",
+  "Web: Could not open https://www.nordre-gate-20-22.no/ (domain guess (.no), HTTP 0).",
+  "Web: Rejected https://www.nordre.no/ (domain guess (first word .no)): page shows a different organisation number (971342080) and not this one.",
+  "Web: Could not open https://www.nordregate2022.no/ (domain guess (concat .no), HTTP 0).",
+  "Web: Could not open https://www.nordregate.no/ (domain guess (two-word .no), HTTP 0).",
+  "Web: Could not open https://www.nordre-gate-20-22.com/ (domain guess (.com), HTTP 0).",
+  "Web: Could not open https://www.ng22.no/ (domain guess (initials .no), HTTP 0).",
+  "Web: No own website could be verified, so no news, jobs or social pages are published."
+ ],
+ "first_checked_at": "2026-11-15T01:44:16+00:00",
+ "register_site": "www.infill.no",
+ "web": {
+  "status": "no_site",
+  "checked_at": "2026-11-15T01:44:25+00:00",
+  "notes": [
+   "Could not open https://www.infill.no/ (declared in the register, HTTP 500).",
+   "Could not open https://www.nordre-gate-20-22.no/ (domain guess (.no), HTTP 0).",
+   "Rejected https://www.nordre.no/ (domain guess (first word .no)): page shows a different organisation number (971342080) and not this one.",
+   "Could not open https://www.nordregate2022.no/ (domain guess (concat .no), HTTP 0).",
+   "Could not open https://www.nordregate.no/ (domain guess (two-word .no), HTTP 0).",
+   "Could not open https://www.nordre-gate-20-22.com/ (domain guess (.com), HTTP 0).",
+   "Could not open https://www.ng22.no/ (domain guess (initials .no), HTTP 0).",
+   "No own website could be verified, so no news, jobs or social pages are published."
+  ]
+ },
+ "not_found": [
+  "a verified own website",
+  "a recent dated news item",
+  "an open job posting",
+  "a social media page"
+ ]
+}

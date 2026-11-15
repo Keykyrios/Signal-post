@@ -1,0 +1,366 @@
+{
+ "orgnr": "983737943",
+ "checked_at": "2026-11-15T01:19:19+00:00",
+ "schema": 1,
+ "status": "under_liquidation",
+ "kind": "enhet",
+ "facts": {
+  "name": {
+   "value": "EU MUR OG PUSS ANS",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "legal_form": {
+   "value": "Ansvarlig selskap med solidarisk ansvar",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "code": "ANS",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "registered_in_enhetsregisteret": {
+   "value": "2001-10-23",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "as_of": "2001-10-23",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "founded": {
+   "value": "2001-09-20",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "as_of": "2001-09-20",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "business_address": {
+   "value": "Store Landfall nedre 7, 3024 DRAMMEN",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "municipality": {
+   "value": "DRAMMEN",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "postal_address": {
+   "value": "Christen Smiths gate 9, 3045 DRAMMEN",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "industry_1": {
+   "value": "Annen spesialisert bygge- og anleggsvirksomhet ikke nevnt annet sted",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "code": "43.990",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "institutional_sector": {
+   "value": "Personlige foretak",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "code": "2300",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "vat_registered": {
+   "value": false,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "in_business_register": {
+   "value": true,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "phone": {
+   "value": "40840625",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "stated_purpose": {
+   "value": "Murvirksomhet samt enhver virksomhet forbundet med dette.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "stated_activity": {
+   "value": "Mur- og betongarbeider.",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "liquidation_start": {
+   "value": "2026-09-11",
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "as_of": "2026-09-11",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "sub_units": {
+   "value": 0,
+   "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=983737943",
+   "retrieved_at": "2026-11-15T01:19:19+00:00",
+   "source_url_note": "count of registered sub-units",
+   "first_seen": "2026-11-15T01:19:19+00:00",
+   "last_changed": "2026-11-15T01:19:19+00:00"
+  },
+  "summary": {
+   "value": "EU MUR OG PUSS ANS (ansvarlig selskap med solidarisk ansvar) is based in Drammen, registered in the Brønnøysund register on 2001-10-23. Its main industry in the register is annen spesialisert bygge- og anleggsvirksomhet ikke nevnt annet sted. Not found: a verified own website, a recent dated news item, an open job posting, a social media page.",
+   "source": "Signalpost summary of the sourced facts on this profile",
+   "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+   "retrieved_at": "2026-11-15T01:23:03+00:00",
+   "evidence": "built only from the facts listed on this profile"
+  }
+ },
+ "changes": [],
+ "history": [],
+ "match": {
+  "checksum_valid": true,
+  "requested": "983737943",
+  "returned": "983737943",
+  "matches_request": true,
+  "registry": "enheter"
+ },
+ "explanation": [
+  "Matched on organisation number 983737943: checksum valid, and the register returned the same number.",
+  "Register status is 'under_liquidation'. Facts describe the last registered state.",
+  "No annual accounts are published for this number. Small sole proprietorships and many associations are not required to file."
+ ],
+ "first_checked_at": "2026-11-15T01:19:19+00:00",
+ "register_site": null,
+ "not_found": [
+  "a verified own website",
+  "a recent dated news item",
+  "an open job posting",
+  "a social media page"
+ ],
+ "envelope": {
+  "legal_identity": {
+   "organisation_number": "983737943",
+   "name": "EU MUR OG PUSS ANS",
+   "legal_form": "Ansvarlig selskap med solidarisk ansvar",
+   "legal_form_code": "ANS",
+   "business_address": "Store Landfall nedre 7, 3024 DRAMMEN",
+   "municipality": "DRAMMEN",
+   "postal_address": "Christen Smiths gate 9, 3045 DRAMMEN",
+   "founded": "2001-09-20",
+   "industry": "Annen spesialisert bygge- og anleggsvirksomhet ikke nevnt annet sted",
+   "industry_code": "43.990",
+   "employees": null,
+   "status": "under_liquidation"
+  },
+  "annual_accounts": {
+   "state": "not_available",
+   "revenue": null,
+   "operating_result": null,
+   "net_result": null,
+   "total_assets": null,
+   "equity": null,
+   "currency": null,
+   "period_end": null,
+   "period_start": null
+  },
+  "leadership": {
+   "ceo": {
+    "state": "not_available",
+    "value": null
+   },
+   "board_chair": {
+    "state": "not_available",
+    "value": null
+   },
+   "board_size": {
+    "state": "not_available",
+    "value": null,
+    "members": null
+   },
+   "auditor": {
+    "state": "not_available",
+    "value": null
+   },
+   "accountant": {
+    "state": "not_available",
+    "value": null
+   },
+   "sub_units": {
+    "state": "available",
+    "value": 0
+   }
+  },
+  "web_presence": {
+   "verified_website": {
+    "state": "not_available",
+    "value": null,
+    "verification_method": null,
+    "evidence": null
+   },
+   "registry_website": {
+    "state": "not_available",
+    "value": null
+   },
+   "social_profiles": {
+    "state": "not_available"
+   }
+  },
+  "activity": {
+   "job_postings": {
+    "state": "not_available",
+    "items": [],
+    "careers_page": null
+   },
+   "recent_news": {
+    "state": "not_available",
+    "latest_title": null,
+    "latest_date": null,
+    "source_url": null
+   }
+  },
+  "evidence": {
+   "name": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "legal_form": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "registered_in_enhetsregisteret": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": "2001-10-23"
+   },
+   "founded": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": "2001-09-20"
+   },
+   "business_address": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "municipality": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "postal_address": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "industry_1": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "institutional_sector": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "vat_registered": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "in_business_register": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "phone": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "stated_purpose": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "stated_activity": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "liquidation_start": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": "2026-09-11"
+   },
+   "sub_units": {
+    "source": "Enhetsregisteret (Bronnoysund Register Centre)",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=983737943",
+    "retrieved_at": "2026-11-15T01:19:19+00:00",
+    "as_of": null
+   },
+   "summary": {
+    "source": "Signalpost summary of the sourced facts on this profile",
+    "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/983737943",
+    "retrieved_at": "2026-11-15T01:23:03+00:00",
+    "as_of": null,
+    "evidence": "built only from the facts listed on this profile"
+   }
+  },
+  "refresh": {
+   "checked_at": "2026-11-15T01:19:19+00:00",
+   "first_checked_at": "2026-11-15T01:19:19+00:00",
+   "changes_detected": 0,
+   "web_status": "not_checked"
+  }
+ }
+}
