@@ -1,0 +1,30 @@
+{
+ "finished_at": "2026-11-15T01:57:40+00:00",
+ "companies_requested": 100,
+ "profiles_written": 100,
+ "not_processed_budget": 0,
+ "status_counts": {
+  "active": 93,
+  "under_liquidation": 7
+ },
+ "profiles_with_verified_website": 1,
+ "profiles_with_news": 0,
+ "profiles_with_open_positions": 0,
+ "profiles_with_social_page": 0,
+ "web_step": {
+  "verified": 1,
+  "no_site": 59,
+  "error": 33,
+  "not_reached": 0
+ },
+ "requests_made": 806,
+ "search_queries": 12,
+ "depth_counts": {
+  "1": 0,
+  "2": 0,
+  "3": 100
+ },
+ "seconds": 367.4,
+ "external_api_cost_usd": 0.0,
+ "model_calls": 0
+}
