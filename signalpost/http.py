@@ -11,7 +11,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-USER_AGENT = "signalpost/1.0 (open-data profile agent; Brreg NLOD 2.0 data)"
+USER_AGENT = "signalpost/2.0 (open-data profile agent; Brreg NLOD 2.0 data)"
 
 
 class BudgetExceeded(Exception):
@@ -67,3 +67,12 @@ class Client:
                     time.sleep(1.5 * (attempt + 1))
                     continue
         return last_status, None
+    
+    def budget_remaining(self):
+        """Return approximate remaining request budget."""
+        with self._lock:
+            return max(0, self.max_requests - self.requests_made)
+    
+    def time_remaining(self):
+        """Return approximate remaining time in seconds."""
+        return max(0, self.deadline - time.monotonic())

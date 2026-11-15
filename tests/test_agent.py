@@ -51,6 +51,15 @@ class Fake:
                 return answer
         return 404, None
 
+    def _reserve(self):
+        self.requests_made += 1
+
+    def budget_remaining(self):
+        return 999
+
+    def time_remaining(self):
+        return 999
+
 
 def routes(entity=ENTITY, roles=ROLES, accounts=ACCOUNTS):
     return {
@@ -72,7 +81,7 @@ class OrgnrTests(unittest.TestCase):
 
 class ProfileTests(unittest.TestCase):
     def test_facts_have_source_and_dates(self):
-        p = agent.build_profile(Fake(routes()), GOOD)
+        p = agent.build_profile(Fake(routes()), GOOD, web_discovery=False)
         self.assertEqual(p["status"], "active")
         self.assertTrue(p["match"]["matches_request"])
         for key, fact in p["facts"].items():
@@ -89,7 +98,7 @@ class ProfileTests(unittest.TestCase):
     def test_wrong_company_is_rejected(self):
         wrong = copy.deepcopy(ENTITY)
         wrong["organisasjonsnummer"] = OTHER
-        p = agent.build_profile(Fake(routes(entity=wrong)), GOOD)
+        p = agent.build_profile(Fake(routes(entity=wrong)), GOOD, web_discovery=False)
         self.assertEqual(p["status"], "rejected")
         self.assertEqual(p["facts"], {})
 
@@ -97,11 +106,11 @@ class ProfileTests(unittest.TestCase):
         foreign = copy.deepcopy(ACCOUNTS)
         for item in foreign:
             item["virksomhet"]["organisasjonsnummer"] = OTHER
-        p = agent.build_profile(Fake(routes(accounts=foreign)), GOOD)
+        p = agent.build_profile(Fake(routes(accounts=foreign)), GOOD, web_discovery=False)
         self.assertNotIn("revenue", p["facts"])
 
     def test_no_invented_financials(self):
-        p = agent.build_profile(Fake({**routes(), f"/regnskap/{GOOD}": (404, None)}), GOOD)
+        p = agent.build_profile(Fake({**routes(), f"/regnskap/{GOOD}": (404, None)}), GOOD, web_discovery=False)
         for key in ("revenue", "net_result", "total_assets", "equity", "operating_result"):
             self.assertNotIn(key, p["facts"])
         self.assertTrue(any("annual accounts" in n.lower() for n in p["explanation"]))
@@ -115,22 +124,22 @@ class ProfileTests(unittest.TestCase):
     def test_deleted_entity(self):
         r = routes()
         r[f"/enheter/{GOOD}"] = (410, {"organisasjonsnummer": GOOD, "slettedato": "2025-03-01"})
-        p = agent.build_profile(Fake(r), GOOD)
+        p = agent.build_profile(Fake(r), GOOD, web_discovery=False)
         self.assertEqual(p["status"], "deleted")
 
     def test_subunit_fallback(self):
         sub = {"organisasjonsnummer": GOOD, "navn": "AVDELING", "beliggenhetsadresse": {"adresse": ["Veien 2"], "postnummer": "5003", "poststed": "BERGEN", "kommune": "BERGEN"}}
         r = {f"/enheter/{GOOD}": (404, None), f"/underenheter/{GOOD}": (200, sub),
              f"/regnskap/{GOOD}": (404, None)}
-        p = agent.build_profile(Fake(r), GOOD)
+        p = agent.build_profile(Fake(r), GOOD, web_discovery=False)
         self.assertEqual(p["kind"], "underenhet")
         self.assertEqual(p["facts"]["business_address"]["value"], "Veien 2, 5003 BERGEN")
 
     def test_refresh_detects_change_and_keeps_first_seen(self):
-        first = agent.build_profile(Fake(routes()), GOOD)
+        first = agent.build_profile(Fake(routes()), GOOD, web_discovery=False)
         changed = copy.deepcopy(ENTITY)
         changed["antallAnsatte"] = 55
-        second = agent.build_profile(Fake(routes(entity=changed)), GOOD, previous=first)
+        second = agent.build_profile(Fake(routes(entity=changed)), GOOD, previous=first, web_discovery=False)
         fields = {c["field"]: c for c in second["changes"]}
         self.assertEqual(fields["employees"]["old"], 42)
         self.assertEqual(fields["employees"]["new"], 55)
@@ -138,9 +147,9 @@ class ProfileTests(unittest.TestCase):
         self.assertEqual(second["facts"]["name"]["last_changed"], first["facts"]["name"]["last_changed"])
 
     def test_failed_refresh_keeps_previous(self):
-        first = agent.build_profile(Fake(routes()), GOOD)
+        first = agent.build_profile(Fake(routes()), GOOD, web_discovery=False)
         down = Fake({f"/enheter/{GOOD}": (503, None)})
-        second = agent.build_profile(down, GOOD, previous=first)
+        second = agent.build_profile(down, GOOD, previous=first, web_discovery=False)
         self.assertEqual(second["facts"]["name"]["value"], "TESTSELSKAP AS")
         self.assertIn("refresh_note", second)
 
@@ -148,22 +157,22 @@ class ProfileTests(unittest.TestCase):
 class RunTests(unittest.TestCase):
     def test_run_and_ui(self):
         with tempfile.TemporaryDirectory() as tmp:
-            profiles, report = runner.run([GOOD, "923609017"], tmp, client=Fake(routes()), log=lambda *_: None)
+            profiles, report = runner.run([GOOD, "923609017"], tmp, client=Fake(routes()), log=lambda *_: None, web=False)
             self.assertEqual(report["profiles_written"], 2)
             self.assertEqual(report["external_api_cost_usd"], 0.0)
 
     def test_depth_plan_fits_budget(self):
         for n, budget in ((1000, 1800), (400, 1800), (100, 1800), (1000, 5000)):
-            plan = runner.plan_depths(n, budget)
+            plan, _ = runner.plan_depths(n, budget, web=False)
             self.assertEqual(len(plan), n)
             self.assertLessEqual(sum(runner.COST[d] for d in plan), budget + 1)
-        self.assertEqual(min(runner.plan_depths(1000, 1800)), 1)
-        self.assertEqual(set(runner.plan_depths(100, 1800)), {3})
+        self.assertEqual(min(runner.plan_depths(1000, 1800, web=False)[0]), 1)
+        self.assertEqual(set(runner.plan_depths(100, 1800, web=False)[0]), {3})
 
     def test_shallow_run_keeps_deeper_facts(self):
-        full = agent.build_profile(Fake(routes()), GOOD)
+        full = agent.build_profile(Fake(routes()), GOOD, web_discovery=False)
         self.assertIn("revenue", full["facts"])
-        shallow = agent.build_profile(Fake(routes()), GOOD, previous=full, depth=1)
+        shallow = agent.build_profile(Fake(routes()), GOOD, previous=full, depth=1, web_discovery=False)
         self.assertEqual(shallow["facts"]["revenue"]["retrieved_at"], full["facts"]["revenue"]["retrieved_at"])
         self.assertFalse([c for c in shallow["changes"] if c["new"] is None])
 

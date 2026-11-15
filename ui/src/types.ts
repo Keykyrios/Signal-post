@@ -1,4 +1,4 @@
-export type FactValue = string | number | boolean | string[];
+export type FactValue = string | number | boolean | string[] | Record<string, unknown>[];
 
 export interface Fact {
   value: FactValue;
@@ -11,6 +11,9 @@ export interface Fact {
   members?: string[];
   first_seen?: string;
   last_changed?: string;
+  verification_method?: string;
+  platform?: string;
+  item_count?: number;
 }
 
 export interface Change {
@@ -31,6 +34,8 @@ export interface Profile {
   changes: Change[];
   history?: Change[];
   explanation: string[];
+  summary?: string;
+  envelope?: Record<string, unknown>;
 }
 
 export interface RunReport {

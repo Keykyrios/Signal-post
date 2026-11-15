@@ -1,74 +1,135 @@
 # Signalpost agent
 
-Give it Norwegian organisation numbers. It returns a profile per company: facts, a source link and retrieval date for every fact, the date each fact refers to, and a plain-language note on how the company was matched. Re-running refreshes profiles and records what changed.
+Give it Norwegian organisation numbers. It returns a company profile: registry facts, verified website, social media profiles, recent news, job postings, and a human-readable summary. Every fact carries a source link, retrieval date, and the date it refers to. Re-running refreshes profiles and records what changed.
 
 ## Run it
 
-Python 3.9+, standard library only. No install step, no API key. The viewer is prebuilt in `ui/dist`, so Node is not needed to run it.
+Python 3.9+, standard library only (uses `urllib`, `json`, `html`, `ssl`, `re`, `concurrent.futures`). No install step, no API key, no pip dependencies. The viewer is prebuilt in `ui/dist`, so Node is not needed to run it.
 
-One command: find 1,000 companies, build the profiles, open the viewer at http://127.0.0.1:8000
+**One command** — build profiles for companies from a file, open the viewer:
+
+```
+python -m signalpost run --input companies.txt --out out
+python -m signalpost serve --out out
+```
+
+Or discover + build + serve in one shot:
 
 ```
 python -m signalpost all
 ```
 
-Or step by step:
+### Official evaluation run
+
+The evaluator supplies a file of organisation numbers. Run:
 
 ```
-python -m signalpost discover --n 1000 --out companies.txt
-python -m signalpost run --input companies.txt --out out
-python -m signalpost serve --out out
+python -m signalpost run --input <supplied-file> --out out
 ```
 
-Files written:
+This reads org numbers from plain text (one per line) or JSONL format, builds a full profile for each, and writes exactly one terminal envelope per company to `out/profiles.jsonl`.
 
-- `out/profiles/<orgnr>.json` and `out/profiles.jsonl`: the profiles
-- `out/run_report.json`: companies, status counts, requests used, seconds, cost, depth used
-- Viewer: search, filters, per-fact source links, change history, "how this was matched", CSV and JSON export
+## What it finds
 
-Other commands: `python -m signalpost one 923609016` prints one profile. Tests: `python -m unittest discover -s tests`. Viewer end-to-end test (needs Playwright): `python tests/ui_e2e.py http://127.0.0.1:8000/`.
+### From official registers (Brønnøysundregistrene)
+- Legal identity: name, legal form, address, municipality, industry codes, employees
+- Annual accounts: revenue, operating result, net result, total assets, equity
+- Leadership: CEO, board chair, board members, auditor, accountant
+- Sub-units and registered workplaces
 
-Rebuild the viewer after editing `ui/src`: `cd ui && npm install && npm run build`.
+### From the web (new in v2)
+- **Verified website**: searched via DuckDuckGo, verified by org number or company name on the page
+- **Social media profiles**: Facebook, Instagram, Twitter/X, YouTube, TikTok — extracted from the company's own website
+- **Recent news**: dated news items from the company's news/blog page
+- **Job postings**: dated job listings from the company's careers page
+- **Company description**: meta description or about-page text from the verified website
 
-## Sources
-
-All from the Brønnøysund Register Centre open APIs (NLOD 2.0 licence):
-
-- Enhetsregisteret: `/enheter/{orgnr}`, falling back to `/underenheter/{orgnr}`, plus sub-unit count
-- Enhetsregisteret roles: `/enheter/{orgnr}/roller`
-- Regnskapsregisteret: `/regnskap/{orgnr}` (newest annual accounts)
+### Generated
+- **Human-readable summary**: what the company does, key financials, leadership, web presence, and what was not found
+- **Terminal envelope**: all 7 required sections with explicit availability states
 
 ## How it stays correct
 
 - Input must pass the modulus-11 check digit before any request is made.
 - The organisation number in each response must equal the requested one. If not, the profile is rejected and nothing is published.
+- **Website verification**: a candidate URL is only accepted if the page contains the organisation number or the company's legal name. Directory sites (proff.no, gulesider.no, etc.) are excluded.
+- Social profiles and news items are only published when found on the verified company website.
 - Accounts naming a different company are dropped.
-- Financial values are published only if the register returned a number. Nothing is estimated or filled in.
+- Financial values are published only if the register returned a number. Nothing is estimated.
 - Resigned role holders are excluded. Birth dates are never read or stored.
-- Each fact keeps `first_seen`, `last_changed`, `retrieved_at` and, where the register gives one, `as_of`. Changed or removed facts go to `changes` and `history`.
+- Each fact keeps `first_seen`, `last_changed`, `retrieved_at` and, where the register gives one, `as_of`.
 - If a refresh fails (register down), the previous profile is kept and annotated.
 - Deleted, bankrupt, liquidating and closed entities are reported with that status.
+- Every company in the input gets exactly one result, even if nothing was found (`not_available` / `failed` states).
 
-## Limits and cost
+## Output format
 
-Defaults stop at 1,800 requests and 40 minutes, under the daily 2,000 requests and 45 minutes.
+Each profile contains:
+- `facts`: key-value facts with source, source_url, retrieved_at, as_of
+- `summary`: human-readable company description
+- `envelope`: terminal envelope with all 7 required sections
+- `explanation`: how the company was matched and what was found/not found
+- `changes` / `history`: what changed since the last run
 
-A full profile costs about 4 requests (entity, roles, sub-unit count, accounts), so 1,000 full profiles would break the daily cap. The run therefore plans depth up front so the whole list fits the budget:
+## Budget and cost
 
-- depth 3: entity, roles, sub-units, accounts (about 4 requests each)
-- depth 2: entity and accounts (about 2)
-- depth 1: entity record only (about 1)
+Defaults: 1,800 requests and 40 minutes (under the daily 2,000/45min limit).
 
-For 1,000 companies at 1,800 requests, every company gets the entity record and about 700 also get annual accounts. A shallower run never deletes or re-dates facts it did not re-check: earlier values keep their original retrieval date and the profile says so. Run again the next day to deepen more profiles. Force a depth with `--depth N`.
+A full profile with web discovery costs about 6-8 requests. The planner allocates depth and web discovery based on the total budget:
+- depth 3 + web: entity, roles, sub-units, accounts, search, website verify, page crawl (~8 requests)
+- depth 3 no web: entity, roles, sub-units, accounts (~4 requests)
+- depth 2 + web: entity, accounts, search, website verify, page crawl (~6 requests)
+- depth 1 no web: entity record only (~1 request)
 
-- Model/API: no LLM and no paid API. Registers only.
+For 100 companies at 1,800 requests: all get depth 3 + web discovery.
+For 1,000 companies at 1,800 requests: the planner allocates depth 2 for most companies, with web discovery for a subset.
+
+- Model/API: no LLM and no paid API.
 - Expected run cost: $0.00 declared external API cost.
-- `--skip-fresh-hours N` reuses profiles checked recently and saves requests.
+- `--no-web` flag skips web discovery (registry data only, like v1).
+- `--skip-fresh-hours N` reuses profiles checked recently.
 
-## Not covered
+## Sources
 
-The registers do not publish ownership, shareholders, or history before the latest filed accounts. The agent does not scrape company websites, because matching a web page to the right company is the main source of wrong-company errors.
+All from permitted public sources:
+
+1. **Brønnøysund Register Centre open APIs** (NLOD 2.0 licence):
+   - Enhetsregisteret: `/enheter/{orgnr}`, `/underenheter/{orgnr}`, sub-unit count
+   - Enhetsregisteret roles: `/enheter/{orgnr}/roller`
+   - Regnskapsregisteret: `/regnskap/{orgnr}` (newest annual accounts)
+
+2. **DuckDuckGo HTML search** (public, no API key): for website candidate discovery only. Search results are not used as evidence — only to find candidates that are then independently verified.
+
+3. **Company-owned websites** (public pages): verified by matching org number or company name. Only the company's own pages are crawled for news, jobs, and social links.
+
+## Commands
+
+```
+python -m signalpost run --input FILE --out DIR    # build profiles from a file of org numbers
+python -m signalpost all                           # discover + build + serve
+python -m signalpost one 923609016                 # print one profile as JSON
+python -m signalpost serve --out DIR               # open the React viewer
+python -m signalpost discover --n 1000             # discover org numbers
+```
+
+## Tests
+
+```
+python -m unittest discover -s tests
+```
+
+## Viewer
+
+The prebuilt React viewer at `ui/dist` provides:
+- Search by company name or org number
+- Filters by status, legal form, municipality
+- Per-fact source links (click any fact to see its source URL)
+- Change history tracking
+- "How this was matched" explanation per company
+- CSV and JSON export
+
+Rebuild after editing `ui/src`: `cd ui && npm install && npm run build`.
 
 ## Viewer credits
 
-React 19, Vite, Tailwind, Motion, Hugeicons. Interface components are vendored from React Bits (MIT with Commons Clause) and Componentry (MIT): click-spark, shredder, bell-toggle, code-slots, branched-menu, folder-float, glide-select, fuse-button, jelly-radio, rubber-segment, swipe-row, squish-switch, pixel-swap, line-sidebar, prompt-bar, webgl-liquid. Several were edited for theme colours, accessibility labels and sizing.
+React 19, Vite, Tailwind, Motion, Hugeicons. Interface components are vendored from React Bits (MIT with Commons Clause) and Componentry (MIT).

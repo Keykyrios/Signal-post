@@ -1,19 +1,25 @@
 {
- "finished_at": "2026-10-17T18:12:30+00:00",
- "companies_requested": 1100,
- "profiles_written": 1100,
+ "finished_at": "2026-11-14T23:59:17+00:00",
+ "companies_requested": 100,
+ "profiles_written": 100,
  "not_processed_budget": 0,
  "status_counts": {
-  "active": 1052,
-  "under_liquidation": 48
+  "active": 93,
+  "under_liquidation": 7
  },
- "requests_made": 1694,
+ "requests_made": 894,
  "depth_counts": {
-  "1": 510,
-  "2": 590,
-  "3": 0
+  "1": 0,
+  "2": 0,
+  "3": 100
  },
- "seconds": 386.4,
+ "web_discovery": {
+  "attempted": 0,
+  "verified": 4,
+  "news_found": 1,
+  "jobs_found": 0
+ },
+ "seconds": 340.5,
  "external_api_cost_usd": 0.0,
  "model_calls": 0
 }

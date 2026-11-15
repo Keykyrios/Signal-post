@@ -14,15 +14,16 @@ def main(argv=None):
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     run = sub.add_parser("run", help="build or refresh profiles for a list of organisation numbers")
-    run.add_argument("--input", required=True, help="text file, one organisation number per line")
+    run.add_argument("--input", required=True, help="text file, one organisation number per line (or JSONL)")
     run.add_argument("--out", default="out", help="output folder (default: out)")
-    run.add_argument("--workers", type=int, default=6)
+    run.add_argument("--workers", type=int, default=4)
     run.add_argument("--max-requests", type=int, default=1800)
     run.add_argument("--max-minutes", type=float, default=40)
     run.add_argument("--depth", type=int, choices=(1, 2, 3), default=None,
                      help="1 entity only, 2 plus accounts, 3 plus roles and sub-units (default: fit the request budget)")
     run.add_argument("--skip-fresh-hours", type=float, default=0,
                      help="reuse profiles checked within this many hours (default 0: always refresh)")
+    run.add_argument("--no-web", action="store_true", help="skip web discovery (registry data only)")
 
     disc = sub.add_parser("discover", help="pick organisation numbers from the register")
     disc.add_argument("--n", type=int, default=1000)
@@ -34,6 +35,7 @@ def main(argv=None):
     every.add_argument("--out", default="out")
     every.add_argument("--port", type=int, default=8000)
     every.add_argument("--no-serve", action="store_true")
+    every.add_argument("--no-web", action="store_true", help="skip web discovery")
 
     srv = sub.add_parser("serve", help="open the React viewer on a local port")
     srv.add_argument("--out", default="out")
@@ -41,6 +43,7 @@ def main(argv=None):
 
     one = sub.add_parser("one", help="print one profile as JSON")
     one.add_argument("orgnr")
+    one.add_argument("--no-web", action="store_true", help="skip web discovery")
 
     args = parser.parse_args(argv)
 
@@ -60,7 +63,8 @@ def main(argv=None):
         _, report = runner.run(numbers, args.out, workers=args.workers,
                                max_requests=args.max_requests,
                                max_seconds=int(args.max_minutes * 60),
-                               skip_fresh_hours=args.skip_fresh_hours, depth=args.depth)
+                               skip_fresh_hours=args.skip_fresh_hours, depth=args.depth,
+                               web=not getattr(args, 'no_web', False))
         print(json.dumps(report, indent=2))
         print(f"Run: python -m signalpost serve --out {args.out}")
         return 0
@@ -71,7 +75,8 @@ def main(argv=None):
         listing = os.path.join(args.out, "companies.txt")
         with open(listing, "w", encoding="utf-8") as handle:
             handle.write("\n".join(numbers) + "\n")
-        _, report = runner.run(numbers, args.out)
+        _, report = runner.run(numbers, args.out,
+                               web=not getattr(args, 'no_web', False))
         print(json.dumps(report, indent=2))
         if not args.no_serve:
             from . import serve as serve_mod
@@ -84,7 +89,8 @@ def main(argv=None):
         return 0
 
     if args.cmd == "one":
-        profile = agent.build_profile(Client(max_requests=10), args.orgnr)
+        profile = agent.build_profile(Client(max_requests=20), args.orgnr,
+                                       web_discovery=not getattr(args, 'no_web', False))
         print(json.dumps(profile, indent=2, ensure_ascii=False))
         return 0
     return 1
